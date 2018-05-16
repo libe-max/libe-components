@@ -1,0 +1,22 @@
+{
+  "name": "libe-components",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "standard": "standard --verbose | snazzy",
+    "standard-fix": "standard --fix --verbose | snazzy"
+  },
+  "standard": {
+    "globals": ["URL", "fetch"]
+  }
+}
