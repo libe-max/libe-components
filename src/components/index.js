@@ -1,3 +1,3 @@
-import SimpleDiaporama from './SimpleDiaporama/index.js'
+import SimpleDiaporama from './SimpleDiaporama'
 
 export {SimpleDiaporama}

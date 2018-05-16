@@ -19,7 +19,7 @@ class App extends React.Component {
       ]
     }
     return (
-      <div className="app">
+      <div className='app'>
         <h1>Libé components</h1>
         <p>A presentation of individual components that can be used inside any format for Libération.</p>
         <h3>Simple diaporama</h3>

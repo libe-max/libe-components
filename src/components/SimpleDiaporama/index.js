@@ -4,9 +4,9 @@ import './lib/slick.min.css'
 import './styles/style.css'
 
 export default class SimpleDiaporama extends React.Component {
-  render() {
+  render () {
     const style = { height: this.props.height || 400 }
-    const imagesList = this.props.images || []
+    const imagesList = this.props.images || []
     const images = imagesList.map((img, i) => (
       <div className='simple-diaporama__slide-container' key={i}>
         <div style={style}>

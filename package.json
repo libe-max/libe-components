@@ -1,7 +1,6 @@
 {
   "name": "libe-components",
   "version": "0.1.0",
-  "private": true,
   "main": "./src/blocks/index.js",
   "dependencies": {
     "react": "^16.3.2",
@@ -18,6 +17,9 @@
     "standard-fix": "standard --fix --verbose | snazzy"
   },
   "standard": {
-    "globals": ["URL", "fetch"]
+    "globals": [
+      "URL",
+      "fetch"
+    ]
   }
 }
