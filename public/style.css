@@ -1,0 +1,257 @@
+/* Components page styles */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1.25rem;
+  background: url(./grid-bg.png);
+}
+
+*, h1, h2, h3, h4, h5, h6, p {
+  margin: unset;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * *
+ * *   LAYOUT
+ * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * PAGE CONTAINER
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components {
+  padding: 6rem;
+  padding-top: 14rem;
+}
+
+@media screen and (max-width: 1007px) {
+  .lblb-components {
+    padding: 4rem;
+    padding-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .lblb-components {
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+}
+
+.lblb-components
+  .lblb-components__family-name {
+    margin-bottom: 5rem;
+}
+
+.lblb-components
+  .lblb-components__component-name {
+    margin-bottom: 2rem;
+}
+
+.lblb-components
+  .lblb-components__component-variant {
+    margin-bottom: 1rem;
+}
+
+.lblb-components
+  .lblb-components__component {
+    margin-bottom: 1rem;
+}
+
+.lblb-components
+  .lblb-components__comp-slot {
+    margin-bottom: 3rem;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENTS ROW
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__comp-row {
+  display: flex;
+  width: 100%;
+}
+
+.lblb-components__comp-row
+  .lblb-components__comp-slot {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+.lblb-components__comp-row
+  .lblb-components__comp-slot:first-child {
+    border-left: 2px solid #DDD;
+}
+
+.lblb-components__comp-row
+  .lblb-components__comp-slot:last-child {
+    border-right: 2px solid #DDD;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENTS COLUMN
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__comp-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lblb-components__comp-col
+  .lblb-components__comp-slot {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.lblb-components__comp-col
+  .lblb-components__comp-slot:first-child {
+    border-top: none;
+}
+
+.lblb-components__comp-col
+  .lblb-components__comp-slot:last-child {
+    border-bottom: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENTS SLOT
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__comp-slot {
+  flex-grow: 1;
+  padding: 1rem;
+  max-width: 600px;
+  transition: background-color 200ms;
+}
+
+.lblb-components__comp-slot:hover {
+  background-color: rgba(30, 144, 255, 0.05);
+}
+
+@media screen and (max-width: 1007px) {
+  .lblb-components__comp-slot {
+    max-width: 540px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .lblb-components__comp-slot {
+    max-width: 440px;
+  }
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * *
+ * *   TEXT LEVELS
+ * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENTS FAMILY NAME
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__family-name {
+  font-family: 'Helvetica';
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 800;
+  color: #1D90FF;
+}
+
+@media screen and (max-width: 1007px) {
+  .lblb-components__family-name {
+    font-size: 3.75rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .lblb-components__family-name {
+    font-size: 2.75rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENT NAME
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__component-name {
+  font-family: 'Input Mono';
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+  color: #1D90FF;
+}
+
+@media screen and (max-width: 1007px) {
+  .lblb-components__component-name {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .lblb-components__component-name {
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENT VARIANT
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__component-variant {
+  display: inline-block;
+  font-family: 'Input Mono';
+  font-size: 1rem;
+  color: #CCC;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *
+ * COMPONENT PROPS
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.lblb-components__component-props {
+  display: inline-block;
+  font-family: 'Input Mono';
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #CCC;
+}
+
+
+
+
+
+
+
+
