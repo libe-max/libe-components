@@ -228,9 +228,10 @@ body {
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .lblb-components__component-variant {
-  display: inline-block;
+  display: block;
   font-family: 'Input Mono';
   font-size: 1rem;
+  line-height: 1rem;
   color: #CCC;
 }
 
