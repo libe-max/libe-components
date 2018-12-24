@@ -8,15 +8,25 @@ import React, { Component } from 'react'
  *   Text level that is used for regular text.
  *
  *   PROPS
- *   children, literary
+ *   children, literary, small, big, huge
  *
  */
 
-export default class Paragraph extends Component {
+export default class Paragraph extends Component {
+  constructor () {
+    super()
+    this.c = 'lblb-paragraph'
+  }
+
   render () {
-    const props = this.props
-    const classes = ['lblb-paragraph']
-    if (props.literary) classes.push('lblb-paragraph_literary')
+    const { props, c } = this
+
+    const classes = [c]
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
+    if (props.literary) classes.push(`${c}_literary`)
+
     return <p className={classes.join(' ')}>
       {props.children}
     </p>

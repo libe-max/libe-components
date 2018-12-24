@@ -9,14 +9,25 @@ import Heading from '../../primitives/Heading'
  *   Annotation title heading element.
  *
  *   PROPS
- *   level, children
+ *   level, children, small, big, huge
  *
  */
 
 export default class AnnotationTitle extends Component {
+  constructor () {
+    super()
+    this.c = 'lblb-annotation-title'
+  }
+
   render () {
-    const props = this.props
-    return <div className='lblb-annotation-title'>
+    const { props, c } = this
+
+    const classes = [c]
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
+
+    return <div className={classes.join(' ')}>
       <Heading level={props.level || 5}>
         {props.children}
       </Heading>

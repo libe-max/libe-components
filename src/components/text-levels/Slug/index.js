@@ -10,14 +10,25 @@ import React, { Component } from 'react'
  *   main category of the article
  *
  *   PROPS
- *   children
+ *   children, small, big, huge
  *
  */
 
-export default class Slug extends Component {
+export default class Slug extends Component {
+  constructor () {
+    super()
+    this.c = 'lblb-slug'
+  }
+
   render () {
-    const props = this.props
-    return <span className='lblb-slug'>
+    const { props, c } = this
+
+    const classes = [c]
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
+
+    return <span className={classes.join(' ')}>
       {props.children}
     </span>
   }

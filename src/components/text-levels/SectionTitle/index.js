@@ -9,14 +9,25 @@ import Heading from '../../primitives/Heading'
  *   Section title heading element.
  *
  *   PROPS
- *   level, children
+ *   level, children, small, big, huge
  *
  */
 
 export default class SectionTitle extends Component {
-  render () {
-    const props = this.props
-    return <div className='lblb-section-title'>
+  constructor () {
+    super()
+    this.c = 'lblb-section-title'
+  }
+
+  render () {
+    const { props, c } = this
+
+    const classes = [c]
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
+
+    return <div className={classes.join(' ')}>
       <Heading level={props.level || 3}>
         {props.children}
       </Heading>
