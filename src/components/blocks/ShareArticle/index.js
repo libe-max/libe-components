@@ -57,14 +57,14 @@ export default class ShareArticle extends Component {
   handleTwitterClick () {
     const { props } = this
     const urlFromProps = props.url
-    const urlFromMeta = document.querySelector('meta[property="twitter:url"]')
-      ? document.querySelector('meta[property="twitter:url"]').getAttribute('content')
+    const urlFromMeta = document.querySelector('meta[name="twitter:url"]')
+      ? document.querySelector('meta[name="twitter:url"]').getAttribute('content')
       : undefined
     const urlFromHref = window.location.href
     const url = urlFromProps || urlFromMeta || urlFromHref
     const txtFromProps = props.tweetText
-    const txtFromMeta = document.querySelector('meta[property="custom:tweet-text"]')
-      ? document.querySelector('meta[property="custom:tweet-text"]').getAttribute('content')
+    const txtFromMeta = document.querySelector('meta[name="custom:tweet-text"]')
+      ? document.querySelector('meta[name="custom:tweet-text"]').getAttribute('content')
       : undefined
     const txtFromTitle = document.querySelector('title')
       ? document.querySelector('title').innerText
@@ -72,8 +72,8 @@ export default class ShareArticle extends Component {
     const txtDefault = 'Découvrez cet article'
     const txt = txtFromProps || txtFromMeta || txtFromTitle || txtDefault
     const viaFromProps = props.tweetVia
-    const viaFromMeta = document.querySelector('meta[property="custom:tweet-via"]')
-      ? document.querySelector('meta[property="custom:tweet-via"]').getAttribute('content')
+    const viaFromMeta = document.querySelector('meta[name="custom:tweet-via"]')
+      ? document.querySelector('meta[name="custom:tweet-via"]').getAttribute('content')
       : '@libe'
     const via = viaFromProps || viaFromMeta
     const tweet = `${txt} ${url} via ${via}`
@@ -109,8 +109,8 @@ export default class ShareArticle extends Component {
       : ''
     const description = descriptionFromProps || descriptionFromMeta
     const urlFromProps = props.url
-    const urlFromMeta = document.querySelector('meta[property="twitter:url"]')
-      ? document.querySelector('meta[property="twitter:url"]').getAttribute('content')
+    const urlFromMeta = document.querySelector('link[rel="canonical"]')
+      ? document.querySelector('link[rel="canonical"]').getAttribute('href')
       : undefined
     const urlFromHref = window.location.href
     const url = urlFromProps || urlFromMeta || urlFromHref
