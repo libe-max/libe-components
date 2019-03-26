@@ -99,7 +99,7 @@ class App extends React.Component {
               <ShareArticle />
             </div>
             <div className={`${c}__component-props`}>
-              url, tweetText, tweetVia, title, description
+              short, iconsOnly, url, tweet
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
@@ -108,7 +108,7 @@ class App extends React.Component {
               <ShareArticle short />
             </div>
             <div className={`${c}__component-props`}>
-              url, tweetText, tweetVia, title, description, iconsOnly
+              short, iconsOnly, url, tweet
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ class App extends React.Component {
               <ShareArticle iconsOnly />
             </div>
             <div className={`${c}__component-props`}>
-              url, tweetText, tweetVia, title, description, iconsOnly
+              short, iconsOnly, url, tweet
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
@@ -128,7 +128,7 @@ class App extends React.Component {
               <ShareArticle short iconsOnly />
             </div>
             <div className={`${c}__component-props`}>
-              url, tweetText, tweetVia, title, description, iconsOnly
+              short, iconsOnly, url, tweet
             </div>
           </div>
         </div>

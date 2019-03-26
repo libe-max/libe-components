@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { staticsRootUrl } from '../../../.globals.js'
 import Svg from '../../primitives/Svg'
 import Paragraph from '../../text-levels/Paragraph'
 
@@ -11,8 +12,7 @@ import Paragraph from '../../text-levels/Paragraph'
  *   e-mail or printer.
  *
  *   PROPS
- *   short, url, tweetText, tweetVia, title, description,
- *   iconsOnly
+ *   short, iconsOnly, url, tweet
  *
  */
 
@@ -38,12 +38,7 @@ export default class ShareArticle extends Component {
    * * * * * * * * * * * * * * * */
   handleFacebookClick () {
     const { props } = this
-    const urlFromProps = props.url
-    const urlFromMeta = document.querySelector('meta[property="og:url"]')
-      ? document.querySelector('meta[property="og:url"]').getAttribute('content')
-      : undefined
-    const urlFromHref = window.location.href
-    const url = urlFromProps || urlFromMeta || urlFromHref
+    const url = props.url || window.location.href
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`
     const features = 'width=575, height=400, menubar=no, toolbar=no'
     return window.open(facebookUrl, '', features)
@@ -56,27 +51,14 @@ export default class ShareArticle extends Component {
    * * * * * * * * * * * * * * * */
   handleTwitterClick () {
     const { props } = this
-    const urlFromProps = props.url
-    const urlFromMeta = document.querySelector('meta[name="twitter:url"]')
-      ? document.querySelector('meta[name="twitter:url"]').getAttribute('content')
-      : undefined
-    const urlFromHref = window.location.href
-    const url = urlFromProps || urlFromMeta || urlFromHref
-    const txtFromProps = props.tweetText
-    const txtFromMeta = document.querySelector('meta[name="custom:tweet-text"]')
-      ? document.querySelector('meta[name="custom:tweet-text"]').getAttribute('content')
-      : undefined
+    const url = props.url || window.location.href
+    const txtFromProps = props.tweet
     const txtFromTitle = document.querySelector('title')
       ? document.querySelector('title').innerText
       : undefined
     const txtDefault = 'Découvrez cet article'
-    const txt = txtFromProps || txtFromMeta || txtFromTitle || txtDefault
-    const viaFromProps = props.tweetVia
-    const viaFromMeta = document.querySelector('meta[name="custom:tweet-via"]')
-      ? document.querySelector('meta[name="custom:tweet-via"]').getAttribute('content')
-      : '@libe'
-    const via = viaFromProps || viaFromMeta
-    const tweet = `${txt} ${url} via ${via}`
+    const txt = txtFromProps || txtFromTitle || txtDefault
+    const tweet = `${txt} ${url}`
     const twitterUrl = `https://twitter.com/intent/tweet?original_referer=&text=${tweet}`
     const features = 'width=575, height=400, menubar=no, toolbar=no'
     return window.open(twitterUrl, '', features)
@@ -98,27 +80,18 @@ export default class ShareArticle extends Component {
    * * * * * * * * * * * * * * * */
   handleEmailClick () {
     const { props } = this
-    const titleFromProps = props.title
-    const titleFromMeta = document.querySelector('title')
+    const title = document.querySelector('title')
       ? document.querySelector('title').innerText
       : ''
-    const title = titleFromProps || titleFromMeta
-    const descriptionFromProps = props.description
-    const descriptionFromMeta = document.querySelector('meta[name="description"]')
+    const description = document.querySelector('meta[name="description"]')
       ? document.querySelector('meta[name="description"]').getAttribute('content')
       : ''
-    const description = descriptionFromProps || descriptionFromMeta
-    const urlFromProps = props.url
-    const urlFromMeta = document.querySelector('link[rel="canonical"]')
-      ? document.querySelector('link[rel="canonical"]').getAttribute('href')
-      : undefined
-    const urlFromHref = window.location.href
-    const url = urlFromProps || urlFromMeta || urlFromHref
+    const url = props.url || window.location.href
     const mailSubject = 'Lu sur Libération.fr'
     const mailBody = title +
-      '%0D%0A%0D%0A' +
+      '%0D%0A' +
       description +
-      '%0D%0A%0D%0A' +
+      '%0D%0A' +
       'Retrouvez cet article sur le site de Libération :' +
       '%0D%0A' +
       url
@@ -133,6 +106,10 @@ export default class ShareArticle extends Component {
    * * * * * * * * * * * * * * * */
   render () {
     const { props, c } = this
+    const facebookIconSrc = `${staticsRootUrl}/assets/facebook-logo-icon_32.svg`
+    const twitterIconSrc = `${staticsRootUrl}/assets/twitter-logo-icon_32.svg`
+    const printIconSrc = `${staticsRootUrl}/assets/printer-icon_32.svg`
+    const mailIconSrc = `${staticsRootUrl}/assets/e-mail-icon_32.svg`
 
     /* Assign classes */
     const classes = [c]
@@ -143,21 +120,21 @@ export default class ShareArticle extends Component {
     return <div className={classes.join(' ')}>
       <button className={`${c}__facebook-button`}
         onClick={this.handleFacebookClick}>
-        <Svg src='https://www.liberation.fr/apps/static/assets/facebook-logo-icon_32.svg' />
+        <Svg src={facebookIconSrc} />
         <Paragraph>Facebook</Paragraph>
       </button>
       <button className={`${c}__twitter-button`}
         onClick={this.handleTwitterClick}>
-        <Svg src='https://www.liberation.fr/apps/static/assets/twitter-logo-icon_32.svg' />
+        <Svg src={twitterIconSrc} />
         <Paragraph>Twitter</Paragraph>
       </button>
       <button className={`${c}__printer-button`}
         onClick={this.handlePrinterClick}>
-        <Svg src='https://www.liberation.fr/apps/static/assets/printer-icon_32.svg' />
+        <Svg src={printIconSrc} />
       </button>
       <button className={`${c}__e-mail-button`}
         onClick={this.handleEmailClick}>
-        <Svg src='https://www.liberation.fr/apps/static/assets/e-mail-icon_32.svg' />
+        <Svg src={mailIconSrc} />
       </button>
     </div>
   }
