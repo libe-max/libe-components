@@ -15,6 +15,10 @@ import AnnotationTitle from './components/text-levels/AnnotationTitle'
 import Annotation from './components/text-levels/Annotation'
 
 // Blocks
+import Loader from './components/blocks/Loader'
+import LoadingError from './components/blocks/LoadingError'
+import LogoGlyph from './components/blocks/LogoGlyph'
+import LibeLaboLogo from './components/blocks/LibeLaboLogo'
 import ShareArticle from './components/blocks/ShareArticle'
 
 class App extends React.Component {
@@ -33,6 +37,58 @@ class App extends React.Component {
     return (
       <div className={`${c}`}>
         <h2 className={`${c}__family-name`}>Blocks</h2>
+
+        {/* Loader */}
+        <h3 className={`${c}__component-name`}>Loader</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <Loader />
+            </div>
+            <div className={`${c}__component-props`}>
+              - none -
+            </div>
+          </div>
+        </div>
+
+        {/* Loading error */}
+        <h3 className={`${c}__component-name`}>LoadingError</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <LoadingError />
+            </div>
+            <div className={`${c}__component-props`}>
+              - none -
+            </div>
+          </div>
+        </div>
+
+        {/* Logo glyph */}
+        <h3 className={`${c}__component-name`}>LogoGlyph</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <LogoGlyph />
+            </div>
+            <div className={`${c}__component-props`}>
+              - none -
+            </div>
+          </div>
+        </div>
+
+        {/* Libe Labo logo */}
+        <h3 className={`${c}__component-name`}>LibeLaboLogo</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <LibeLaboLogo />
+            </div>
+            <div className={`${c}__component-props`}>
+              - none -
+            </div>
+          </div>
+        </div>
 
         {/* Share article */}
         <h3 className={`${c}__component-name`}>ShareArticle</h3>
