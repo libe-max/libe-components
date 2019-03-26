@@ -19,6 +19,7 @@ import Loader from './components/blocks/Loader'
 import LoadingError from './components/blocks/LoadingError'
 import LogoGlyph from './components/blocks/LogoGlyph'
 import LibeLaboLogo from './components/blocks/LibeLaboLogo'
+import ArticleMeta from './components/blocks/ArticleMeta'
 import ShareArticle from './components/blocks/ShareArticle'
 
 class App extends React.Component {
@@ -86,6 +87,43 @@ class App extends React.Component {
             </div>
             <div className={`${c}__component-props`}>
               - none -
+            </div>
+          </div>
+        </div>
+
+      {/* Article meta */}
+        <h3 className={`${c}__component-name`}>ArticleMeta</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <ArticleMeta authors={[{
+                name: 'Didier Ravon',
+                link: 'https://www.liberation.fr/auteur/17123-didier-ravon'
+              }, {
+                name: 'Maxime Fabas',
+                link: 'https://maximefabas.github.io',
+                role: 'author'
+              },
+              {
+                name: 'Michel',
+                link: 'https://maximefabas.github.io',
+                role: 'author'
+              },
+              {
+                name: 'On monte pas dans ton bus',
+                link: 'https://maximefabas.github.io',
+                role: 'author'
+              },
+              {
+                name: 'Libé Labo',
+                link: 'https://www.liberation.fr/data-nouveaux-formats-six-plus',
+                role: 'production'
+              }]}
+              publishedOn={Date.now() - 10000}
+              updatedOn={Date.now()} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn
             </div>
           </div>
         </div>
