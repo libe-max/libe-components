@@ -1,6 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+// Global information
+import { staticsRootUrl } from './.globals'
+
+// Primitives
+import Svg from './components/primitives/Svg'
+
 // Text levels
 import PageTitle from './components/text-levels/PageTitle'
 import InterTitle from './components/text-levels/InterTitle'
@@ -21,6 +27,7 @@ import LogoGlyph from './components/blocks/LogoGlyph'
 import LibeLaboLogo from './components/blocks/LibeLaboLogo'
 import ArticleMeta from './components/blocks/ArticleMeta'
 import ShareArticle from './components/blocks/ShareArticle'
+import Photo from './components/blocks/Photo'
 
 class App extends React.Component {
   constructor () {
@@ -37,6 +44,83 @@ class App extends React.Component {
 
     return (
       <div className={`${c}`}>
+
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * ICONS
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
+        <h2 className={`${c}__family-name`}>Icons</h2>
+        
+        <div className={`${c}__comp-row ${c}__comp-row_icons`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/down-arrow-head-icon_24.svg`} />
+              <div className={`${c}__component-props`}>down-arrow-head-icon_24</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/left-arrow-head-icon_24.svg`} />
+              <div className={`${c}__component-props`}>left-arrow-head-icon_24</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/right-arrow-head-icon_24.svg`} />
+              <div className={`${c}__component-props`}>right-arrow-head-icon_24</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/tilted-cross-icon_24.svg`} />
+              <div className={`${c}__component-props`}>tilted-cross-icon_24</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/up-arrow-head-icon_24.svg`} />
+              <div className={`${c}__component-props`}>up-arrow-head-icon_24</div>
+            </div>
+
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/e-mail-icon_32.svg`} />
+              <div className={`${c}__component-props`}>e-mail-icon_32</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/facebook-logo-icon_32.svg`} />
+              <div className={`${c}__component-props`}>facebook-logo-icon_32</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/printer-icon_32.svg`} />
+              <div className={`${c}__component-props`}>printer-icon_32</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/twitter-logo-icon_32.svg`} />
+              <div className={`${c}__component-props`}>twitter-logo-icon_32</div>
+            </div>
+            
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/left-arrow-head-icon_40.svg`} />
+              <div className={`${c}__component-props`}>left-arrow-head-icon_40</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/right-arrow-head-icon_40.svg`} />
+              <div className={`${c}__component-props`}>right-arrow-head-icon_40</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/tilted-cross-icon_40.svg`} />
+              <div className={`${c}__component-props`}>tilted-cross-icon_40</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/expand-arrows-icon_40.svg`} />
+              <div className={`${c}__component-props`}>expand-arrows-icon_40</div>
+            </div>
+            
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/loader-icon_64.svg`} />
+              <div className={`${c}__component-props`}>loader-icon_64</div>
+            </div>
+          </div>
+        </div>
+
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * BLOCKS
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
         <h2 className={`${c}__family-name`}>Blocks</h2>
 
         {/* Loader */}
@@ -91,36 +175,23 @@ class App extends React.Component {
           </div>
         </div>
 
-      {/* Article meta */}
+        {/* Article meta */}
         <h3 className={`${c}__component-name`}>ArticleMeta</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component`}>
-              <ArticleMeta authors={[{
-                name: 'Didier Ravon',
-                link: 'https://www.liberation.fr/auteur/17123-didier-ravon'
-              }, {
-                name: 'Maxime Fabas',
-                link: 'https://maximefabas.github.io',
-                role: 'author'
-              },
-              {
-                name: 'Michel',
-                link: 'https://maximefabas.github.io',
-                role: 'author'
-              },
-              {
-                name: 'On monte pas dans ton bus',
-                link: 'https://maximefabas.github.io',
-                role: 'author'
-              },
-              {
-                name: 'Libé Labo',
-                link: 'https://www.liberation.fr/data-nouveaux-formats-six-plus',
-                role: 'production'
-              }]}
-              publishedOn={Date.now() - 10000}
-              updatedOn={Date.now()} />
+              <ArticleMeta publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
             </div>
             <div className={`${c}__component-props`}>
               authors, publishedOn, updatedOn
@@ -171,6 +242,28 @@ class App extends React.Component {
           </div>
         </div>
 
+        {/* Photo */}
+        <h3 className={`${c}__component-name`}>Photo</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <Photo src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                description='Some photo description'
+                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                expandable />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, hdSrc, description, credits, expandable
+            </div>
+          </div>
+        </div>
+
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * TEXT LEVELS
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
         <h2 className={`${c}__family-name`}>Text levels</h2>
 
         {/* Size selector */}

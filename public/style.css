@@ -98,6 +98,37 @@ body {
     border-right: 2px solid #DDD;
 }
 
+.lblb-components__comp-row_icons
+  .lblb-components__component {
+    display: flex;
+    align-items: center;
+}
+
+.lblb-components__comp-row_icons
+  .lblb-svg {
+    margin-right: 1rem;
+}
+
+.lblb-components__comp-row_icons .lblb-svg #background {
+  fill: #FFFFFF;
+  fill-opacity: .5;
+  stroke: #DDD;
+}
+
+.lblb-components__comp-row_icons .lblb-svg #fill-1,
+.lblb-components__comp-row_icons .lblb-svg #fill-2,
+.lblb-components__comp-row_icons .lblb-svg #fill-3 {
+  fill: #212121;
+}
+
+.lblb-components__comp-row_icons .lblb-svg #fill-2 {
+  fill-opacity: .5;
+}
+
+.lblb-components__comp-row_icons .lblb-svg #fill-3 {
+  fill-opacity: .2;
+}
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
  *
  * COMPONENTS COLUMN
