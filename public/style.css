@@ -2,10 +2,12 @@
 
 html {
   font-size: 16px;
+  line-height: 1.5rem;
 }
 
 body {
   font-size: 1.25rem;
+  line-height: 1.5rem;
   background: url(./grid-bg.png);
 }
 

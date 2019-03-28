@@ -79,6 +79,9 @@ export default class Photo extends Component {
     if (props.description || props.credits) classes.push(`${c}_with-info-line`)
     if (props.expandable) classes.push(`${c}_expandable`)
     if (props.expandable && state.expanded) classes.push(`${c}_expanded`)
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
 
     /* Display component */
     return <div className={classes.join(' ')}
@@ -87,10 +90,20 @@ export default class Photo extends Component {
       <img className={`${c}__photo`} src={src} onClick={this.toggleExpand} />
       <div className={`${c}__info-line`}>
         <span className={`${c}__description`}>
-          <Annotation>{h2r.parse(props.description)}</Annotation>
+          <Annotation
+            small={props.small}
+            big={props.big}
+            huge={props.huge}>
+            {h2r.parse(props.description)}
+          </Annotation>
         </span>
         <span className={`${c}__credits`}>
-          <Annotation>{h2r.parse(props.credits)}</Annotation>
+          <Annotation
+            small={props.small}
+            big={props.big}
+            huge={props.huge}>
+            {h2r.parse(props.credits)}
+          </Annotation>
         </span>
       </div>
       <button className={`${c}__expand`}

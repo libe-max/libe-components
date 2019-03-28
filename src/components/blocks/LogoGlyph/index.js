@@ -50,8 +50,8 @@ export default class LogoGlyph extends Component {
     if ($node) {
       const $parent = $node.parentNode
       const parentStyle = window.getComputedStyle($parent)
-      const fontSize = parseFloat(parentStyle.fontSize.replace('px', ''))
-      const lineHeight = parseFloat(parentStyle.lineHeight.replace('px', ''))
+      const fontSize = parseFloat(parentStyle.fontSize.replace('px', '')) || 0
+      const lineHeight = parseFloat(parentStyle.lineHeight.replace('px', '')) || 0
       if (fontSize !== state.fontSize ||
         lineHeight !== state.lineHeight) {
         this.setState({ fontSize, lineHeight })

@@ -114,9 +114,17 @@ export default class ArticleMeta extends Component {
 
     /* Assign classes */
     const classes = [c]
+    if (props.small) classes.push(`${c}_small`)
+    if (props.big) classes.push(`${c}_big`)
+    if (props.huge) classes.push(`${c}_huge`)
 
     return <div className={classes.join(' ')}>
-      <Annotation>{fullDisplay}</Annotation>
+      <Annotation
+        small={props.small}
+        big={props.big}
+        huge={props.huge}>
+        {fullDisplay}
+      </Annotation>
     </div>
   }
 }

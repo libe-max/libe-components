@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Slug from '../../text-levels/Slug'
 import Paragraph from '../../text-levels/Paragraph'
-import LogoGlyph from '../../blocks/LogoGlyph'
 
 /*
- *   Loading error component
+ *   Read also component
  *   ------------------------------------------------------
  *
  *   DESCRIPTION
- *   Displays an error message and a link to reload the
- *   page
+ *   A block containing a link
  *
  *   PROPS
- *   small, big, huge
+ *   title, url, small, big, huge
  *
  */
 
-export default class LoadingError extends Component {
+export default class ReadAlso extends Component {
   /* * * * * * * * * * * * * * * *
    *
    * CONSTRUCTOR
@@ -23,7 +23,7 @@ export default class LoadingError extends Component {
    * * * * * * * * * * * * * * * */
   constructor () {
     super()
-    this.c = 'lblb-loading-error'
+    this.c = 'lblb-read-also'
   }
 
   /* * * * * * * * * * * * * * * *
@@ -40,15 +40,38 @@ export default class LoadingError extends Component {
     if (props.big) classes.push(`${c}_big`)
     if (props.huge) classes.push(`${c}_huge`)
 
+    /* Display component */
     return <div className={classes.join(' ')}>
+      <Slug noBg
+        small={props.small}
+        big={props.big}
+        huge={props.huge}>
+        À lire aussi
+      </Slug>
       <Paragraph
         small={props.small}
         big={props.big}
         huge={props.huge}>
-        Une erreur de chargement est survenue,<br />
-        <a href={window.location}>recharger la page ?</a><br /><br />
-        <LogoGlyph />
+        <a href={props.url}>{props.title}</a>
       </Paragraph>
     </div>
   }
+}
+
+/* * * * * Prop types * * * * */
+
+ReadAlso.propTypes = {
+  title: PropTypes.string,
+  url: PropTypes.string,
+  small: PropTypes.bool,
+  big: PropTypes.bool,
+  huge: PropTypes.bool
+}
+
+ReadAlso.defaultProps = {
+  title: 'Titre du lien',
+  url: null,
+  small: false,
+  big: false,
+  huge: false
 }

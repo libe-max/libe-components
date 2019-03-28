@@ -10,7 +10,7 @@ import React, { Component } from 'react'
  *   main category of the article
  *
  *   PROPS
- *   children, small, big, huge
+ *   children, small, big, huge, noBg
  *
  */
 
@@ -27,6 +27,7 @@ export default class Slug extends Component {
     if (props.small) classes.push(`${c}_small`)
     if (props.big) classes.push(`${c}_big`)
     if (props.huge) classes.push(`${c}_huge`)
+    if (props.noBg) classes.push(`${c}_no-bg`)
 
     return <span className={classes.join(' ')}>
       {props.children}

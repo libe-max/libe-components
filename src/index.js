@@ -26,6 +26,8 @@ import LoadingError from './components/blocks/LoadingError'
 import LogoGlyph from './components/blocks/LogoGlyph'
 import LibeLaboLogo from './components/blocks/LibeLaboLogo'
 import ArticleMeta from './components/blocks/ArticleMeta'
+import BottomNotes from './components/blocks/BottomNotes'
+import ReadAlso from './components/blocks/ReadAlso'
 import ShareArticle from './components/blocks/ShareArticle'
 import Photo from './components/blocks/Photo'
 
@@ -136,19 +138,6 @@ class App extends React.Component {
           </div>
         </div>
 
-        {/* Loading error */}
-        <h3 className={`${c}__component-name`}>LoadingError</h3>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component`}>
-              <LoadingError />
-            </div>
-            <div className={`${c}__component-props`}>
-              - none -
-            </div>
-          </div>
-        </div>
-
         {/* Logo glyph */}
         <h3 className={`${c}__component-name`}>LogoGlyph</h3>
         <div className={`${c}__comp-row`}>
@@ -175,12 +164,55 @@ class App extends React.Component {
           </div>
         </div>
 
+        {/* Loading error */}
+        <h3 className={`${c}__component-name`}>LoadingError</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small</div>
+            <div className={`${c}__component`}>
+              <LoadingError small />
+            </div>
+            <div className={`${c}__component-props`}>
+              small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component`}>
+              <LoadingError />
+            </div>
+            <div className={`${c}__component-props`}>
+              small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big</div>
+            <div className={`${c}__component`}>
+              <LoadingError big />
+            </div>
+            <div className={`${c}__component-props`}>
+              small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge</div>
+            <div className={`${c}__component`}>
+              <LoadingError huge />
+            </div>
+            <div className={`${c}__component-props`}>
+              small, big, huge
+            </div>
+          </div>
+        </div>
+
         {/* Article meta */}
         <h3 className={`${c}__component-name`}>ArticleMeta</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small</div>
             <div className={`${c}__component`}>
-              <ArticleMeta publishedOn={Date.now() - 3e12}
+              <ArticleMeta small
+                publishedOn={Date.now() - 3e12}
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
@@ -194,7 +226,253 @@ class App extends React.Component {
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
-              authors, publishedOn, updatedOn
+              authors, publishedOn, updatedOn, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta big
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta huge
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge
+            </div>
+          </div>
+        </div>
+
+      {/* Bottom notes */}
+        <h3 className={`${c}__component-name`}>BottomNotes</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small</div>
+            <div className={`${c}__component`}>
+              <BottomNotes small
+                activeNote={1}
+                notes={[{
+                  text: 'Note simple, lorem ipsum dolor sit amet',
+                  id: 0
+                }, {
+                  component: <Annotation literary small>
+                    Note JSX, belliquillam tortor ut sed
+                  </Annotation>,
+                  id: 1
+                }, {}]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              notes, activeNote, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component`}>
+              <BottomNotes
+                activeNote={1}
+                notes={[{
+                  text: 'Note simple, lorem ipsum dolor sit amet',
+                  id: 0
+                }, {
+                  component: <Annotation literary>
+                    Note JSX, belliquillam tortor ut sed
+                  </Annotation>,
+                  id: 1
+                }, {}]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              notes, activeNote, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big</div>
+            <div className={`${c}__component`}>
+              <BottomNotes big
+                activeNote={1}
+                notes={[{
+                  text: 'Note simple, lorem ipsum dolor sit amet',
+                  id: 0
+                }, {
+                  component: <Annotation literary big>
+                    Note JSX, belliquillam tortor ut sed
+                  </Annotation>,
+                  id: 1
+                }, {}]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              notes, activeNote, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge</div>
+            <div className={`${c}__component`}>
+              <BottomNotes huge
+                activeNote={1}
+                notes={[{
+                  text: 'Note simple, lorem ipsum dolor sit amet',
+                  id: 0
+                }, {
+                  component: <Annotation literary huge>
+                    Note JSX, belliquillam tortor ut sed
+                  </Annotation>,
+                  id: 1
+                }, {}]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              notes, activeNote, small, big, huge
+            </div>
+          </div>
+        </div>
+
+        {/* Read also */}
+        <h3 className={`${c}__component-name`}>ReadAlso</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small</div>
+            <div className={`${c}__component`}>
+              <ReadAlso small title='Un titre sur lequel on peut cliquer hé hé' url='#' />
+            </div>
+            <div className={`${c}__component-props`}>
+              title, url, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component`}>
+              <ReadAlso title='Un titre sur lequel on peut cliquer hé hé' url='#' />
+            </div>
+            <div className={`${c}__component-props`}>
+              title, url, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big</div>
+            <div className={`${c}__component`}>
+              <ReadAlso big title='Un titre sur lequel on peut cliquer hé hé' url='#' />
+            </div>
+            <div className={`${c}__component-props`}>
+              title, url, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge</div>
+            <div className={`${c}__component`}>
+              <ReadAlso huge title='Un titre sur lequel on peut cliquer hé hé' url='#' />
+            </div>
+            <div className={`${c}__component-props`}>
+              title, url, small, big, huge
+            </div>
+          </div>
+        </div>
+
+        {/* Photo */}
+        <h3 className={`${c}__component-name`}>Photo</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small</div>
+            <div className={`${c}__component`}>
+              <Photo small
+                src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                description='Some photo description'
+                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                expandable />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, hdSrc, description, credits, expandable, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component`}>
+              <Photo
+                src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                description='Some photo description'
+                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                expandable />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, hdSrc, description, credits, expandable, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big</div>
+            <div className={`${c}__component`}>
+              <Photo big
+                src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                description='Some photo description'
+                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                expandable />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, hdSrc, description, credits, expandable, small, big, huge
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge</div>
+            <div className={`${c}__component`}>
+              <Photo huge
+                src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
+                description='Some photo description'
+                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                expandable />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, hdSrc, description, credits, expandable, small, big, huge
             </div>
           </div>
         </div>
@@ -211,6 +489,8 @@ class App extends React.Component {
               short, iconsOnly, url, tweet
             </div>
           </div>
+        </div>
+        <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component-variant`}>short, !iconsOnly</div>
             <div className={`${c}__component`}>
@@ -231,6 +511,8 @@ class App extends React.Component {
               short, iconsOnly, url, tweet
             </div>
           </div>
+        </div>
+        <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component-variant`}>short, iconsOnly</div>
             <div className={`${c}__component`}>
@@ -238,23 +520,6 @@ class App extends React.Component {
             </div>
             <div className={`${c}__component-props`}>
               short, iconsOnly, url, tweet
-            </div>
-          </div>
-        </div>
-
-        {/* Photo */}
-        <h3 className={`${c}__component-name`}>Photo</h3>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component`}>
-              <Photo src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
-                hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
-                description='Some photo description'
-                credits='<a href="#">https://butdoesitfloat.com/</a>'
-                expandable />
-            </div>
-            <div className={`${c}__component-props`}>
-              src, hdSrc, description, credits, expandable
             </div>
           </div>
         </div>
@@ -419,13 +684,25 @@ class App extends React.Component {
 
         {/* Slug */}
         <h3 className={`${c}__component-name`}>Slug</h3>
-        <div className={`${c}__comp-col`}>
+        <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!noBg</div>
             <div className={`${c}__component`}>
               <Slug {...txtLvl}>Handgloves</Slug>
             </div>
             <div className={`${c}__component-props`}>
               children: inline tags and text
+              noBg
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>noBg</div>
+            <div className={`${c}__component`}>
+              <Slug noBg {...txtLvl}>Handgloves</Slug>
+            </div>
+            <div className={`${c}__component-props`}>
+              children: inline tags and text
+              noBg
             </div>
           </div>
         </div>
