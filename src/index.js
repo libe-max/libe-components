@@ -385,7 +385,7 @@ class App extends React.Component {
           </div>
         </div>
 
-      {/* Bottom notes */}
+        {/* Bottom notes */}
         <h3 className={`${c}__component-name`}>BottomNotes</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
@@ -525,14 +525,13 @@ class App extends React.Component {
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>- none -</div>
+            <div className={`${c}__component-variant`}>!expandable</div>
             <div className={`${c}__component`}>
               <Photo
                 src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 description='Some photo description'
-                credits='<a href="#">https://butdoesitfloat.com/</a>'
-                expandable />
+                credits='<a href="#">https://butdoesitfloat.com/</a>'/>
             </div>
             <div className={`${c}__component-props`}>
               src, hdSrc, description, credits, expandable, small, big, huge
