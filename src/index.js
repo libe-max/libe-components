@@ -29,6 +29,7 @@ import ArticleMeta from './components/blocks/ArticleMeta'
 import BottomNotes from './components/blocks/BottomNotes'
 import ReadAlso from './components/blocks/ReadAlso'
 import ShareArticle from './components/blocks/ShareArticle'
+import CopyValue from './components/blocks/CopyValue'
 import Photo from './components/blocks/Photo'
 
 class App extends React.Component {
@@ -520,6 +521,34 @@ class App extends React.Component {
             </div>
             <div className={`${c}__component-props`}>
               short, iconsOnly, url, tweet
+            </div>
+          </div>
+        </div>
+
+        {/* Copy value */}
+        <h3 className={`${c}__component-name`}>CopyValue</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!hideField</div>
+            <div className={`${c}__component`}>
+              <CopyValue value='Une valeur à copier'
+                label='Copier la valeur'
+                successLabel='Valeur copiée !' />
+            </div>
+            <div className={`${c}__component-props`}>
+              value, label, successLabel, hideField
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>hideField</div>
+            <div className={`${c}__component`}>
+              <CopyValue value='Une valeur à copier'
+                label='Copier la valeur'
+                successLabel='Valeur copiée !'
+                hideField />
+            </div>
+            <div className={`${c}__component-props`}>
+              value, label, successLabel, hideField
             </div>
           </div>
         </div>
