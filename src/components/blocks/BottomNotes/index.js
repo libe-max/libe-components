@@ -43,7 +43,7 @@ export default class BottomNotes extends Component {
     return <div className={classes.join(' ')}>{
       props.notes.map((note, i) => {
         const { id, component, text } = note
-        const sup = (id || id === 0) ? <sup>{id + 1}&nbsp;</sup> : ''
+        const sup = (id || id === 0) ? <sup>({id + 1})&nbsp;</sup> : ''
         const noteClasses = [`${c}__note`]
         if (id === props.activeNote) noteClasses.push(`${c}__note_active`)
         if (text) return <div className={noteClasses.join(' ')} key={i}>
@@ -80,7 +80,7 @@ BottomNotes.propTypes = {
   })),
   activeNote: PropTypes.oneOfType([
     PropTypes.number,
-    (pr,op) => pr[op] === null
+    (props, propName) => props[propName] === null
   ])
 }
 BottomNotes.defaultProps = {
