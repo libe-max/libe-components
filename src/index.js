@@ -227,7 +227,7 @@ class App extends React.Component {
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
-              authors, publishedOn, updatedOn, small, big, huge
+              authors, publishedOn, updatedOn, small, big, huge, inline
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
@@ -248,7 +248,7 @@ class App extends React.Component {
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
-              authors, publishedOn, updatedOn, small, big, huge
+              authors, publishedOn, updatedOn, small, big, huge, inline
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
@@ -269,7 +269,7 @@ class App extends React.Component {
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
-              authors, publishedOn, updatedOn, small, big, huge
+              authors, publishedOn, updatedOn, small, big, huge, inline
             </div>
           </div>
           <div className={`${c}__comp-slot`}>
@@ -290,7 +290,97 @@ class App extends React.Component {
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
-              authors, publishedOn, updatedOn, small, big, huge
+              authors, publishedOn, updatedOn, small, big, huge, inline
+            </div>
+          </div>
+        </div>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>small, inline</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta small
+                inline
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge, inline
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>inline</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta
+                inline
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge, inline
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>big, inline</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta big
+                inline
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge, inline
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>huge, inline</div>
+            <div className={`${c}__component`}>
+              <ArticleMeta huge
+                inline
+                publishedOn={Date.now() - 3e12}
+                updatedOn={Date.now() - 2e12}
+                authors={[
+                  { name: 'Marinette', link: '#' },
+                  { name: 'Jeannot',   link: '#' },
+                  { name: 'Lou',       link: '#' },
+                  { name: 'Claude',    link: '#', role: 'author' },
+                  { name: 'Marius',    link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
+                  { name: 'Paulette',  link: '#', role: 'production' },
+                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                ]} />
+            </div>
+            <div className={`${c}__component-props`}>
+              authors, publishedOn, updatedOn, small, big, huge, inline
             </div>
           </div>
         </div>

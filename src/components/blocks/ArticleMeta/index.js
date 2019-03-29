@@ -12,7 +12,7 @@ import Annotation from '../../text-levels/Annotation'
  *   updation dates
  *
  *   PROPS
- *   authors, publishedOn, updatedOn
+ *   authors, publishedOn, updatedOn, inline
  *
  *   PROPS STRUCTURE
  *   authors expects an object litteral or an array of
@@ -71,28 +71,6 @@ export default class ArticleMeta extends Component {
         else roleGroupsJointWithCommas[role].push(displayAuthor)
       })
     }
-    // Join all roles in a single line
-    const finalRolesDisplay = []
-    if (roleGroupsJointWithCommas.author) {
-      finalRolesDisplay.push(
-        <span className={`${c}__label`} key='label-0'>Par </span>,
-        ...roleGroupsJointWithCommas.author
-      )
-      delete roleGroupsJointWithCommas.author
-    }
-    if (Object.keys(roleGroupsJointWithCommas).length) {
-      finalRolesDisplay.push(<span className={`${c}__label`} key='label-1'> (</span>)
-      for (let role in roleGroupsJointWithCommas) {
-        const roleLine = roleGroupsJointWithCommas[role]
-        finalRolesDisplay.push(
-          <span className={`${c}__label`} key={`label-${role}`}>{role}&nbsp;:&nbsp;</span>,
-          ...roleLine,
-          <span className={`${c}__label`} key={`label-${role}-sep`}>, </span>
-        )
-      }
-      finalRolesDisplay.pop()
-      finalRolesDisplay.push(<span className={`${c}__label`} key='label-last'>)</span>)
-    }
     // Convert timestamps into readable dates
     const displayPublishedOn = props.publishedOn
       ? moment(props.publishedOn).format('D MMMM YYYY à HH:MM')
@@ -100,20 +78,83 @@ export default class ArticleMeta extends Component {
     const displayUpdatedOn = props.updatedOn
       ? moment(props.updatedOn).format('D MMMM YYYY à HH:MM')
       : undefined
-    // Gather all information to be displayed
-    const fullDisplay = [...finalRolesDisplay]
-    if (displayPublishedOn) fullDisplay.push(
-      <span className={`${c}__label`} key='role-date-sep'> — </span>,
-      <span className={`${c}__date`} key='publish-date'>{displayPublishedOn}</span>
-    )
-    if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
-      <span className={`${c}__label`} key='update-label'> (modifié le </span>,
-      <span className={`${c}__date`} key='update-date'>{displayUpdatedOn}</span>,
-      <span className={`${c}__label`} key='update-label-end'>)</span>
-    )
+
+    // Join all roles in a single line
+    const fullDisplay = []
+
+    // Inline display
+    if (props.inline) {
+      if (roleGroupsJointWithCommas.author) {
+        fullDisplay.push(
+          <span className={`${c}__label`} key='label-0'>Par </span>,
+          ...roleGroupsJointWithCommas.author
+        )
+        delete roleGroupsJointWithCommas.author
+      }
+      if (Object.keys(roleGroupsJointWithCommas).length) {
+        fullDisplay.push(<span className={`${c}__label`} key='label-1'> (</span>)
+        for (let role in roleGroupsJointWithCommas) {
+          const roleLine = roleGroupsJointWithCommas[role]
+          fullDisplay.push(
+            <span className={`${c}__label`} key={`label-${role}`}>{role}&nbsp;:&nbsp;</span>,
+            ...roleLine,
+            <span className={`${c}__label`} key={`label-${role}-sep`}>, </span>
+          )
+        }
+        fullDisplay.pop()
+        fullDisplay.push(<span className={`${c}__label`} key='label-last'>)</span>)
+      }
+      // Add dates
+      if (displayPublishedOn) fullDisplay.push(
+        <span className={`${c}__label`} key='role-date-sep'> — </span>,
+        <span className={`${c}__date`} key='publish-date'>{displayPublishedOn}</span>
+      )
+      if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
+        <span className={`${c}__label`} key='update-label'> (modifié le </span>,
+        <span className={`${c}__date`} key='update-date'>{displayUpdatedOn}</span>,
+        <span className={`${c}__label`} key='update-label-end'>)</span>
+      )
+    // Block display
+    } else {
+      if (roleGroupsJointWithCommas.author) {
+        fullDisplay.push(
+          <div>
+            <span className={`${c}__label`}>Textes : </span>
+            {roleGroupsJointWithCommas.author}
+          </div>
+        )
+        delete roleGroupsJointWithCommas.author
+      }
+      if (Object.keys(roleGroupsJointWithCommas).length) {
+        for (let role in roleGroupsJointWithCommas) {
+          const roleLine = roleGroupsJointWithCommas[role]
+          const upCasedRole = role.charAt(0).toUpperCase() + role.slice(1)
+          fullDisplay.push(
+            <div>
+              <span className={`${c}__label`}>{upCasedRole} : </span>
+              {roleLine}
+            </div>   
+          )
+        }
+      }
+      // Add dates
+      if (displayPublishedOn) fullDisplay.push(
+        <div>
+          <span className={`${c}__label`}>Publié le </span>
+          <span className={`${c}__date`}>{displayPublishedOn}</span>
+        </div>
+      )
+      if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
+        <div>
+          <span className={`${c}__label`}>Modifié le </span>
+          <span className={`${c}__date`}>{displayUpdatedOn}</span>
+        </div>
+      )
+    }
 
     /* Assign classes */
     const classes = [c]
+    if (props.inline) classes.push(`${c}_inline`)
     if (props.small) classes.push(`${c}_small`)
     if (props.big) classes.push(`${c}_big`)
     if (props.huge) classes.push(`${c}_huge`)
