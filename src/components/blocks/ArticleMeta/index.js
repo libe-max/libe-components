@@ -118,10 +118,10 @@ export default class ArticleMeta extends Component {
     } else {
       if (roleGroupsJointWithCommas.author) {
         fullDisplay.push(
-          <div>
+          <span className={`${c}__line`} key='author'>
             <span className={`${c}__label`}>Textes : </span>
             {roleGroupsJointWithCommas.author}
-          </div>
+          </span>
         )
         delete roleGroupsJointWithCommas.author
       }
@@ -130,25 +130,25 @@ export default class ArticleMeta extends Component {
           const roleLine = roleGroupsJointWithCommas[role]
           const upCasedRole = role.charAt(0).toUpperCase() + role.slice(1)
           fullDisplay.push(
-            <div>
+            <span className={`${c}__line`} key={role}>
               <span className={`${c}__label`}>{upCasedRole} : </span>
               {roleLine}
-            </div>   
+            </span>   
           )
         }
       }
       // Add dates
       if (displayPublishedOn) fullDisplay.push(
-        <div>
+        <span className={`${c}__line`} key='published-on'>
           <span className={`${c}__label`}>Publié le </span>
           <span className={`${c}__date`}>{displayPublishedOn}</span>
-        </div>
+        </span>
       )
       if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
-        <div>
+        <span className={`${c}__line`} key='updated-on'>
           <span className={`${c}__label`}>Modifié le </span>
           <span className={`${c}__date`}>{displayUpdatedOn}</span>
-        </div>
+        </span>
       )
     }
 

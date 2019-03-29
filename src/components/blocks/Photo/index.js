@@ -87,7 +87,11 @@ export default class Photo extends Component {
     return <div className={classes.join(' ')}
       onClick={state.expanded ? this.toggleExpand : null}
       style={inlineStyle}>
-      <img className={`${c}__photo`} src={src} onClick={this.toggleExpand} />
+      <img className={`${c}__photo`}
+        onClick={this.toggleExpand}
+        alt={props.description}
+        title={props.description}
+        src={src} />
       <div className={`${c}__info-line`}>
         <span className={`${c}__description`}>
           <Annotation

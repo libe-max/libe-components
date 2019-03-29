@@ -207,6 +207,77 @@ class App extends React.Component {
           </div>
         </div>
 
+        {/* Copy value */}
+        <h3 className={`${c}__component-name`}>CopyValue</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!hideField</div>
+            <div className={`${c}__component`}>
+              <CopyValue value='Une valeur à copier'
+                label='Copier la valeur'
+                successLabel='Valeur copiée !' />
+            </div>
+            <div className={`${c}__component-props`}>
+              value, label, successLabel, hideField
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>hideField</div>
+            <div className={`${c}__component`}>
+              <CopyValue value='Une valeur à copier'
+                label='Copier la valeur'
+                successLabel='Valeur copiée !'
+                hideField />
+            </div>
+            <div className={`${c}__component-props`}>
+              value, label, successLabel, hideField
+            </div>
+          </div>
+        </div>
+
+        {/* Share article */}
+        <h3 className={`${c}__component-name`}>ShareArticle</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!short, !iconsOnly</div>
+            <div className={`${c}__component`}>
+              <ShareArticle />
+            </div>
+            <div className={`${c}__component-props`}>
+              short, iconsOnly, url, tweet
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!short, iconsOnly</div>
+            <div className={`${c}__component`}>
+              <ShareArticle iconsOnly />
+            </div>
+            <div className={`${c}__component-props`}>
+              short, iconsOnly, url, tweet
+            </div>
+          </div>
+        </div>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>short, !iconsOnly</div>
+            <div className={`${c}__component`}>
+              <ShareArticle short />
+            </div>
+            <div className={`${c}__component-props`}>
+              short, iconsOnly, url, tweet
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>short, iconsOnly</div>
+            <div className={`${c}__component`}>
+              <ShareArticle short iconsOnly />
+            </div>
+            <div className={`${c}__component-props`}>
+              short, iconsOnly, url, tweet
+            </div>
+          </div>
+        </div>
+
         {/* Article meta */}
         <h3 className={`${c}__component-name`}>ArticleMeta</h3>
         <div className={`${c}__comp-row`}>
@@ -568,82 +639,21 @@ class App extends React.Component {
           </div>
         </div>
 
-        {/* Share article */}
-        <h3 className={`${c}__component-name`}>ShareArticle</h3>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>!short, !iconsOnly</div>
-            <div className={`${c}__component`}>
-              <ShareArticle />
-            </div>
-            <div className={`${c}__component-props`}>
-              short, iconsOnly, url, tweet
-            </div>
-          </div>
-        </div>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>short, !iconsOnly</div>
-            <div className={`${c}__component`}>
-              <ShareArticle short />
-            </div>
-            <div className={`${c}__component-props`}>
-              short, iconsOnly, url, tweet
-            </div>
-          </div>
-        </div>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>!short, iconsOnly</div>
-            <div className={`${c}__component`}>
-              <ShareArticle iconsOnly />
-            </div>
-            <div className={`${c}__component-props`}>
-              short, iconsOnly, url, tweet
-            </div>
-          </div>
-        </div>
-        <div className={`${c}__comp-row`}>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>short, iconsOnly</div>
-            <div className={`${c}__component`}>
-              <ShareArticle short iconsOnly />
-            </div>
-            <div className={`${c}__component-props`}>
-              short, iconsOnly, url, tweet
-            </div>
-          </div>
-        </div>
-
-        {/* Copy value */}
-        <h3 className={`${c}__component-name`}>CopyValue</h3>
         {/* Raster map */}
         <h3 className={`${c}__component-name`}>RasterMap</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>!hideField</div>
-            <div className={`${c}__component`}>
-              <CopyValue value='Une valeur à copier'
-                label='Copier la valeur'
-                successLabel='Valeur copiée !' />
             <div className={`${c}__component`} style={{height: 400}}>
               <RasterMap ref={n => this.rasterMap = n}>
               </RasterMap>
             </div>
             <div className={`${c}__component-props`}>
-              value, label, successLabel, hideField
-            </div>
-          </div>
-          <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component-variant`}>hideField</div>
-            <div className={`${c}__component`}>
-              <CopyValue value='Une valeur à copier'
-                label='Copier la valeur'
-                successLabel='Valeur copiée !'
-                hideField />
+              children, center, zoom, tilesUrl, tilesAttribution, tilesOpacity,
+              tilesZIndex, animate, bounds, doublcClickZoom, dragging, keyboard,
+              maxBounds, onViewportChange, onViewportChanged, touchZoom,
+              viewport
             </div>
             <div className={`${c}__component-props`}>
-              value, label, successLabel, hideField
               METHODS: flyTo, zoomTo, flyAndZoomTo
             </div>
           </div>

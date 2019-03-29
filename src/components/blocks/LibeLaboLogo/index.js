@@ -37,7 +37,7 @@ export default class LibeLaboLogo extends Component {
 
     return <div className={classes.join(' ')}>
       <a href='https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538'>
-        <img width='100%' src={`${staticsRootUrl}/assets/libe-labo-logo.svg`} />
+        <img alt='Logo de Libé Labo' width='100%' src={`${staticsRootUrl}/assets/libe-labo-logo.svg`} />
       </a>
     </div>
   }
