@@ -31,6 +31,7 @@ import ReadAlso from './components/blocks/ReadAlso'
 import ShareArticle from './components/blocks/ShareArticle'
 import CopyValue from './components/blocks/CopyValue'
 import Photo from './components/blocks/Photo'
+import RasterMap from './components/blocks/RasterMap'
 
 class App extends React.Component {
   constructor () {
@@ -616,6 +617,8 @@ class App extends React.Component {
 
         {/* Copy value */}
         <h3 className={`${c}__component-name`}>CopyValue</h3>
+        {/* Raster map */}
+        <h3 className={`${c}__component-name`}>RasterMap</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component-variant`}>!hideField</div>
@@ -623,6 +626,9 @@ class App extends React.Component {
               <CopyValue value='Une valeur à copier'
                 label='Copier la valeur'
                 successLabel='Valeur copiée !' />
+            <div className={`${c}__component`} style={{height: 400}}>
+              <RasterMap ref={n => this.rasterMap = n}>
+              </RasterMap>
             </div>
             <div className={`${c}__component-props`}>
               value, label, successLabel, hideField
@@ -638,6 +644,7 @@ class App extends React.Component {
             </div>
             <div className={`${c}__component-props`}>
               value, label, successLabel, hideField
+              METHODS: flyTo, zoomTo, flyAndZoomTo
             </div>
           </div>
         </div>
