@@ -45,8 +45,7 @@ export default class Photo extends Component {
   toggleExpand (e) {
     e.stopPropagation()
     const { props } = this
-    if (!props.expandable) return
-    else this.setState((state) => ({ expanded: !state.expanded }))
+    if (props.expandable) this.setState((state) => ({ expanded: !state.expanded }))
   }
 
   /* * * * * * * * * * * * * * * *

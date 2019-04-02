@@ -105,15 +105,19 @@ export default class ArticleMeta extends Component {
         fullDisplay.push(<span className={`${c}__label`} key='label-last'>)</span>)
       }
       // Add dates
-      if (displayPublishedOn) fullDisplay.push(
-        <span className={`${c}__label`} key='role-date-sep'> — </span>,
-        <span className={`${c}__date`} key='publish-date'>{displayPublishedOn}</span>
-      )
-      if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
-        <span className={`${c}__label`} key='update-label'> (modifié le </span>,
-        <span className={`${c}__date`} key='update-date'>{displayUpdatedOn}</span>,
-        <span className={`${c}__label`} key='update-label-end'>)</span>
-      )
+      if (displayPublishedOn) {
+        fullDisplay.push(
+          <span className={`${c}__label`} key='role-date-sep'> — </span>,
+          <span className={`${c}__date`} key='publish-date'>{displayPublishedOn}</span>
+        )
+      }
+      if (displayPublishedOn && displayUpdatedOn) {
+        fullDisplay.push(
+          <span className={`${c}__label`} key='update-label'> (modifié le </span>,
+          <span className={`${c}__date`} key='update-date'>{displayUpdatedOn}</span>,
+          <span className={`${c}__label`} key='update-label-end'>)</span>
+        )
+      }
     // Block display
     } else {
       if (roleGroupsJointWithCommas.author) {
@@ -126,30 +130,34 @@ export default class ArticleMeta extends Component {
         delete roleGroupsJointWithCommas.author
       }
       if (Object.keys(roleGroupsJointWithCommas).length) {
-        for (let role in roleGroupsJointWithCommas) {
+        for (let role in roleGroupsJointWithCommas) {
           const roleLine = roleGroupsJointWithCommas[role]
           const upCasedRole = role.charAt(0).toUpperCase() + role.slice(1)
           fullDisplay.push(
             <span className={`${c}__line`} key={role}>
               <span className={`${c}__label`}>{upCasedRole} : </span>
               {roleLine}
-            </span>   
+            </span>
           )
         }
       }
       // Add dates
-      if (displayPublishedOn) fullDisplay.push(
-        <span className={`${c}__line`} key='published-on'>
-          <span className={`${c}__label`}>Publié le </span>
-          <span className={`${c}__date`}>{displayPublishedOn}</span>
-        </span>
-      )
-      if (displayPublishedOn && displayUpdatedOn) fullDisplay.push(
-        <span className={`${c}__line`} key='updated-on'>
-          <span className={`${c}__label`}>Modifié le </span>
-          <span className={`${c}__date`}>{displayUpdatedOn}</span>
-        </span>
-      )
+      if (displayPublishedOn) {
+        fullDisplay.push(
+          <span className={`${c}__line`} key='published-on'>
+            <span className={`${c}__label`}>Publié le </span>
+            <span className={`${c}__date`}>{displayPublishedOn}</span>
+          </span>
+        )
+      }
+      if (displayPublishedOn && displayUpdatedOn) {
+        fullDisplay.push(
+          <span className={`${c}__line`} key='updated-on'>
+            <span className={`${c}__label`}>Modifié le </span>
+            <span className={`${c}__date`}>{displayUpdatedOn}</span>
+          </span>
+        )
+      }
     }
 
     /* Assign classes */

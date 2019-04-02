@@ -77,7 +77,7 @@ export default class CopyValue extends Component {
         }</Paragraph>
       </button>
       <input className={`${c}__input`}
-        ref={n => this.input = n}
+        ref={n => { this.input = n }}
         value={props.value}
         type='text'
         readOnly />

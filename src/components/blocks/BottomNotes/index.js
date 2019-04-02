@@ -46,15 +46,16 @@ export default class BottomNotes extends Component {
         const sup = (id || id === 0) ? <sup>({id + 1})&nbsp;</sup> : ''
         const noteClasses = [`${c}__note`]
         if (id === props.activeNote) noteClasses.push(`${c}__note_active`)
-        if (text) return <div className={noteClasses.join(' ')} key={i}>
-          <Annotation literary
-            small={props.small}
-            big={props.big}
-            huge={props.huge}>
-            {sup}{text}
-          </Annotation>
-        </div>
-        else if (component) {
+        if (text) {
+          return <div className={noteClasses.join(' ')} key={i}>
+            <Annotation literary
+              small={props.small}
+              big={props.big}
+              huge={props.huge}>
+              {sup}{text}
+            </Annotation>
+          </div>
+        } else if (component) {
           return <div className={noteClasses.join(' ')} key={i}>
             <Annotation literary
               small={props.small}

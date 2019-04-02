@@ -134,7 +134,7 @@ RasterMap.propTypes = {
   viewport: PropTypes.shape({
     center: PropTypes.arrayOf(PropTypes.number),
     zoom: PropTypes.number
-  }),
+  })
 }
 
 RasterMap.defaultProps = {

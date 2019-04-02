@@ -55,7 +55,7 @@ class App extends React.Component {
           *
           * * * * * * * * * * * * * * * * * * * * * * * * */}
         <h2 className={`${c}__family-name`}>Icons</h2>
-        
+
         <div className={`${c}__comp-row ${c}__comp-row_icons`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component`}>
@@ -95,7 +95,7 @@ class App extends React.Component {
               <Svg src={`${staticsRootUrl}/assets/twitter-logo-icon_32.svg`} />
               <div className={`${c}__component-props`}>twitter-logo-icon_32</div>
             </div>
-            
+
             <div className={`${c}__component`}>
               <Svg src={`${staticsRootUrl}/assets/left-arrow-head-icon_40.svg`} />
               <div className={`${c}__component-props`}>left-arrow-head-icon_40</div>
@@ -112,7 +112,7 @@ class App extends React.Component {
               <Svg src={`${staticsRootUrl}/assets/expand-arrows-icon_40.svg`} />
               <div className={`${c}__component-props`}>expand-arrows-icon_40</div>
             </div>
-            
+
             <div className={`${c}__component`}>
               <Svg src={`${staticsRootUrl}/assets/loader-icon_64.svg`} />
               <div className={`${c}__component-props`}>loader-icon_64</div>
@@ -289,13 +289,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -310,13 +310,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -331,13 +331,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -352,13 +352,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -376,13 +376,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -398,13 +398,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -420,13 +420,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -442,13 +442,13 @@ class App extends React.Component {
                 updatedOn={Date.now() - 2e12}
                 authors={[
                   { name: 'Marinette', link: '#' },
-                  { name: 'Jeannot',   link: '#' },
-                  { name: 'Lou',       link: '#' },
-                  { name: 'Claude',    link: '#', role: 'author' },
-                  { name: 'Marius',    link: '#', role: 'crédits photo' },
-                  { name: 'Jacotte',   link: '#', role: 'crédits photo' },
-                  { name: 'Paulette',  link: '#', role: 'production' },
-                  { name: 'Bernard',   link: '#', role: 'iconographie' }
+                  { name: 'Jeannot', link: '#' },
+                  { name: 'Lou', link: '#' },
+                  { name: 'Claude', link: '#', role: 'author' },
+                  { name: 'Marius', link: '#', role: 'crédits photo' },
+                  { name: 'Jacotte', link: '#', role: 'crédits photo' },
+                  { name: 'Paulette', link: '#', role: 'production' },
+                  { name: 'Bernard', link: '#', role: 'iconographie' }
                 ]} />
             </div>
             <div className={`${c}__component-props`}>
@@ -603,7 +603,7 @@ class App extends React.Component {
                 src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 description='Some photo description'
-                credits='<a href="#">https://butdoesitfloat.com/</a>'/>
+                credits='<a href="#">https://butdoesitfloat.com/</a>' />
             </div>
             <div className={`${c}__component-props`}>
               src, hdSrc, description, credits, expandable, small, big, huge
@@ -643,9 +643,8 @@ class App extends React.Component {
         <h3 className={`${c}__component-name`}>RasterMap</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
-            <div className={`${c}__component`} style={{height: 400}}>
-              <RasterMap ref={n => this.rasterMap = n}>
-              </RasterMap>
+            <div className={`${c}__component`} style={{ height: 400 }}>
+              <RasterMap ref={n => { this.rasterMap = n }} />
             </div>
             <div className={`${c}__component-props`}>
               children, center, zoom, tilesUrl, tilesAttribution, tilesOpacity,
