@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // Global information
-import { staticsRootUrl } from './.globals'
+import { staticsRootUrl } from './components/.globals'
 
 // Primitives
 import Svg from './components/primitives/Svg'

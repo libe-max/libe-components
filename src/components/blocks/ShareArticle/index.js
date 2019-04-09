@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { staticsRootUrl } from '../../../.globals.js'
+import { staticsRootUrl } from '../../.globals.js'
 import Svg from '../../primitives/Svg'
 import Paragraph from '../../text-levels/Paragraph'
 

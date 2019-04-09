@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { staticsRootUrl } from '../../../.globals.js'
+import { staticsRootUrl } from '../../.globals.js'
 
 /*
  *   Libé Labo logo component

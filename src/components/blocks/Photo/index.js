@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Parser } from 'html-to-react'
-import { staticsRootUrl } from '../../../.globals'
+import { staticsRootUrl } from '../../.globals'
 import Svg from '../../primitives/Svg'
 import Annotation from '../../text-levels/Annotation'
 
