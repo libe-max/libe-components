@@ -9,7 +9,7 @@ import { staticsRootUrl } from '../../.globals.js'
  *   Simple display of the Logo
  *
  *   PROPS
- *   - none -
+ *   target
  *
  */
 
@@ -30,13 +30,13 @@ export default class LibeLaboLogo extends Component {
    *
    * * * * * * * * * * * * * * * */
   render () {
-    const { c } = this
+    const { c, props } = this
 
     /* Assign classes */
     const classes = [c]
 
     return <div className={classes.join(' ')}>
-      <a href='https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538'>
+      <a href='https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538' target={props.target}>
         <img alt='Logo de Libé Labo' width='100%' src={`${staticsRootUrl}/assets/libe-labo-logo.svg`} />
       </a>
     </div>

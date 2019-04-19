@@ -161,7 +161,7 @@ class App extends React.Component {
               <LibeLaboLogo />
             </div>
             <div className={`${c}__component-props`}>
-              - none -
+              target
             </div>
           </div>
         </div>
