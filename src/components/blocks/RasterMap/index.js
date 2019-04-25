@@ -118,19 +118,19 @@ RasterMap.propTypes = {
   tilesZIndex: PropTypes.number,
   animate: PropTypes.bool,
   bounds: PropTypes.arrayOf(PropTypes.number),
-  doublcClickZoom: PropTypes.oneOfType(
+  doublcClickZoom: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string
-  ),
+  ]),
   dragging: PropTypes.bool,
   keyboard: PropTypes.bool,
   maxBounds: PropTypes.arrayOf(PropTypes.number),
   onViewportChange: PropTypes.func,
   onViewportChanged: PropTypes.func,
-  touchZoom: PropTypes.oneOfType(
+  touchZoom: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
-  ),
+  ]),
   viewport: PropTypes.shape({
     center: PropTypes.arrayOf(PropTypes.number),
     zoom: PropTypes.number

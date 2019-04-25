@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom'
 // Global information
 import { staticsRootUrl } from './components/.globals'
 
+// Tracking
+import LoadAndPing from './components/tracking/LoadAndPing'
+
 // Primitives
 import Svg from './components/primitives/Svg'
 
@@ -48,6 +51,13 @@ class App extends React.Component {
 
     return (
       <div className={`${c}`}>
+
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * TRACKING
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
+        <LoadAndPing format='libe-components' article='libe-components' />
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *
