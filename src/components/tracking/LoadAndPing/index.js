@@ -14,7 +14,7 @@ import { apiRootUrl as api } from '../../.globals.js'
  *   variables. Does it again every 15 seconds.
  *
  *   PROPS
- *   format, article, period
+ *   format, article, period, verbose
  *
  */
 
@@ -38,11 +38,14 @@ export default class LoadAndPing extends Component {
    *
    * * * * * * * * * * * * * * * */
   loadReq () {
-    const { format, article } = this.props
+    const { format, article, verbose } = this.props
+    const url = `${api}/${format}/${article}/load`
+    if (verbose) console.log('Load...', url)
     if (format && article) {
-      const url = `${api}/${format}/${article}/load`
-      libeFetch(url).catch(err => {
-        console.warn(err)
+      libeFetch(url).then(json => {
+        if (verbose) console.log('Response: ', json)
+      }).catch(err => {
+        if (verbose) console.warn('Error:', err)
       })
     }
   }
@@ -53,11 +56,14 @@ export default class LoadAndPing extends Component {
    *
    * * * * * * * * * * * * * * * */
   pingReq () {
-    const { format, article } = this.props
+    const { format, article, verbose } = this.props
+    const url = `${api}/${format}/${article}/ping`
+    if (verbose) console.log('Ping...', url)
     if (format && article) {
-      const url = `${api}/${format}/${article}/ping`
-      libeFetch(url).catch(err => {
-        console.warn(err)
+      libeFetch(url).then(json => {
+        if (verbose) console.log('Response: ', json)
+      }).catch(err => {
+        if (verbose) console.warn('Error:', err)
       })
     }
   }
@@ -97,6 +103,7 @@ export default class LoadAndPing extends Component {
 LoadAndPing.propTypes = {
   format: PropTypes.string,
   article: PropTypes.string,
+  verbose: PropTypes.bool,
   period: (props, propName) => {
     const val = props[propName]
     if (val < 1000) {
@@ -108,5 +115,6 @@ LoadAndPing.propTypes = {
 }
 
 LoadAndPing.defaultProps = {
-  period: 60000
+  period: 60000,
+  verbose: false
 }
