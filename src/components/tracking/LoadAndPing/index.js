@@ -14,11 +14,16 @@ import { apiRootUrl as api } from '../../.globals.js'
  *   variables. Does it again every 15 seconds.
  *
  *   PROPS
- *   format, article
+ *   format, article, period
  *
  */
 
 export default class LoadAndPing extends Component {
+  /* * * * * * * * * * * * * * * *
+   *
+   * CONSTRUCTOR
+   *
+   * * * * * * * * * * * * * * * */
   constructor () {
     super()
     this.loadReq = this.loadReq.bind(this)
@@ -26,42 +31,62 @@ export default class LoadAndPing extends Component {
     this.sessionId = Math.random().toString(36).slice(2)
   }
 
+  /* * * * * * * * * * * * * * * *
+   *
+   * LOAD REQUEST
+   *
+   * * * * * * * * * * * * * * * */
   loadReq () {
     const { format, article } = this.props
     if (format && article) {
       const url = `${api}/${format}/${article}/load`
-      libeFetch(url).then(json => {
-        console.log(json)
-      }).catch(err => {
-        console.log(err)
+      libeFetch(url).catch(err => {
+        console.warn(err)
       })
     }
   }
 
+  /* * * * * * * * * * * * * * * *
+   *
+   * PING REQUEST
+   *
+   * * * * * * * * * * * * * * * */
   pingReq () {
     const { format, article } = this.props
     if (format && article) {
       const url = `${api}/${format}/${article}/ping`
-      libeFetch(url).then(json => {
-        console.log(json)
-      }).catch(err => {
-        console.log(err)
+      libeFetch(url).catch(err => {
+        console.warn(err)
       })
     } 
   }
 
+  /* * * * * * * * * * * * * * * *
+   *
+   * DID MOUNT
+   *
+   * * * * * * * * * * * * * * * */
   componentDidMount () {
     this.loadReq()
-    window.setInterval(this.pingReq, 15000)
+    window.setInterval(this.pingReq, this.props.period)
   }
 
+  /* * * * * * * * * * * * * * * *
+   *
+   * DID UPDATE
+   *
+   * * * * * * * * * * * * * * * */
   componentWillUnmount () {
     window.clearInterval(this.pingReq)
   }
 
+  /* * * * * * * * * * * * * * * *
+   *
+   * RENDER
+   *
+   * * * * * * * * * * * * * * * */
   render () {
     const props = this.props
-    console.log(document.cookie)
     return <div className='lblbl-load-and-ping'></div>
   }
 }
@@ -70,5 +95,17 @@ export default class LoadAndPing extends Component {
 
 LoadAndPing.propTypes = {
   format: PropTypes.string,
-  article: PropTypes.string
+  article: PropTypes.string,
+  period: (props, propName) => {
+    const val = props[propName]
+    if (val < 1000) {
+      return new Error('Period is too low. Min: 10000ms')
+    } else if (val > 120000) {
+      return new Error('Period is too high. Max: 120000ms')
+    }
+  }
+}
+
+LoadAndPing.defaultProps = {
+  period: 60000
 }

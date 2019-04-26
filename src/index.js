@@ -57,7 +57,9 @@ class App extends React.Component {
           * TRACKING
           *
           * * * * * * * * * * * * * * * * * * * * * * * * */}
-        <LoadAndPing format='libe-components' article='libe-components' />
+        <LoadAndPing
+          format='libe-components'
+          article='libe-components' />
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *
