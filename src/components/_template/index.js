@@ -44,5 +44,9 @@ export default class LblbComponentTemplate extends Component {
 
 /* * * * * Prop types * * * * */
 
-LblbComponentTemplate.propTypes = {}
-LblbComponentTemplate.defaultProps = {}
+LblbComponentTemplate.propTypes = {
+  prop: PropTypes.string
+}
+LblbComponentTemplate.defaultProps = {
+  prop: null
+}

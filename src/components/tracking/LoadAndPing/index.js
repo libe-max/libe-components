@@ -26,6 +26,7 @@ export default class LoadAndPing extends Component {
    * * * * * * * * * * * * * * * */
   constructor () {
     super()
+    this.c = 'lblb-load-and-ping'
     this.loadReq = this.loadReq.bind(this)
     this.pingReq = this.pingReq.bind(this)
     this.sessionId = Math.random().toString(36).slice(2)
@@ -58,7 +59,7 @@ export default class LoadAndPing extends Component {
       libeFetch(url).catch(err => {
         console.warn(err)
       })
-    } 
+    }
   }
 
   /* * * * * * * * * * * * * * * *
@@ -86,8 +87,8 @@ export default class LoadAndPing extends Component {
    *
    * * * * * * * * * * * * * * * */
   render () {
-    const props = this.props
-    return <div className='lblbl-load-and-ping'></div>
+    const { c } = this
+    return <div className={c} />
   }
 }
 
