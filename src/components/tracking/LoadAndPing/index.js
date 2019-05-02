@@ -11,7 +11,7 @@ import { apiRootUrl as api } from '../../.globals.js'
  *   This component sends a tracking request to
  *   libe-labo.site when mounted. Server responds tokens.
  *   LoadAndPing component stores them as cookies and global
- *   variables. Does it again every 15 seconds.
+ *   variables. Does it again every 60 seconds.
  *
  *   PROPS
  *   format, article, period, verbose
@@ -56,15 +56,18 @@ export default class LoadAndPing extends Component {
    *
    * * * * * * * * * * * * * * * */
   pingReq () {
+    const { tabIsActive } = this
     const { format, article, verbose } = this.props
     const url = `${api}/${format}/${article}/ping`
-    if (verbose) console.log('Ping...', url)
-    if (format && article) {
+    if (format && article && !document.hidden) {
+      if (verbose) console.log('Ping...', url)
       libeFetch(url).then(json => {
         if (verbose) console.log('Response: ', json)
       }).catch(err => {
         if (verbose) console.warn('Error:', err)
       })
+    } else if (document.hidden && verbose) {
+      console.log('Tab is not active, ping not sent.')
     }
   }
 
@@ -115,6 +118,6 @@ LoadAndPing.propTypes = {
 }
 
 LoadAndPing.defaultProps = {
-  period: 60000,
+  period: 5000,
   verbose: false
 }
