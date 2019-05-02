@@ -56,7 +56,6 @@ export default class LoadAndPing extends Component {
    *
    * * * * * * * * * * * * * * * */
   pingReq () {
-    const { tabIsActive } = this
     const { format, article, verbose } = this.props
     const url = `${api}/${format}/${article}/ping`
     if (format && article && !document.hidden) {
