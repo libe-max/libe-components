@@ -19,7 +19,10 @@ const fallback = () => <img alt='Not found' src='https://www.liberation.fr' />
 export default class Svg extends Component {
   render () {
     return <div className='lblb-svg'>
-      <ReactSvg fallback={fallback} {...this.props} />
+      <ReactSvg
+        fallback={fallback}
+        renumerateIRIElements={false}
+        {...this.props} />
     </div>
   }
 }
