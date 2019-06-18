@@ -109,7 +109,7 @@ LoadAndPing.propTypes = {
   period: (props, propName) => {
     const val = props[propName]
     if (val < 1000) {
-      return new Error('Period is too low. Min: 10000ms')
+      return new Error('Period is too low. Min: 1000ms')
     } else if (val > 120000) {
       return new Error('Period is too high. Max: 120000ms')
     }
