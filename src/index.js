@@ -32,6 +32,8 @@ import ShareArticle from './components/blocks/ShareArticle'
 import CopyValue from './components/blocks/CopyValue'
 import Photo from './components/blocks/Photo'
 import RasterMap from './components/blocks/RasterMap'
+import Tweet from './components/blocks/Tweet'
+import Hero from './components/blocks/Hero'
 
 class App extends React.Component {
   constructor () {
@@ -657,6 +659,37 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+
+        {/* Tweet */}
+        <h3 className={`${c}__component-name`}>Tweet</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <Tweet img='https://pbs.twimg.com/media/D3fDLpGW0AAOyBE.jpg' content={`<blockquote class="twitter-tweet" data-lang="en"><p lang="fr" dir="ltr">Le biau brevage qv’icelui ! Haravt ! <a href="https://t.co/AurkFPwDS3">pic.twitter.com/AurkFPwDS3</a></p>&mdash; Jehan le Brave (@Jehanlb) <a href="https://twitter.com/Jehanlb/status/1114574043183747072?ref_src=twsrc%5Etfw">April 6, 2019</a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`} />
+            </div>
+            <div className={`${c}__component-props`}>content, small, big, huge, literary, img, profilePic</div>
+          </div>
+        </div>
+
+        {/* Hero */}
+        <h3 className={`${c}__component-name`}>Hero</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot ${c}__comp-slot_wide`}>
+            <div className={`${c}__component`}>
+              <Hero textShadow
+                illustrationShadow
+                height={30}
+                bgImage='https://static1.squarespace.com/static/59286b6a17bffc4f4514ab4e/59286ba0ff7c5099b2a0ec5c/592892bd46c3c4da9e2f9fce/1495831563674/Club21Matchbook-lg.jpg?format=2500w'
+                illustration='./image-for-hero-component.png'>
+                <Slug huge>Un p'tit slug</Slug><br /><br />
+                <PageTitle>Oh les belles images !</PageTitle>
+              </Hero>
+            </div>
+            <div className={`${c}__component-props`}>children, bgColor, illustration</div>
+          </div>
+        </div>
+
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *

@@ -172,6 +172,10 @@ body {
   transition: background-color 200ms;
 }
 
+.lblb-components__comp-slot_wide {
+  max-width: 100%;
+}
+
 .lblb-components__comp-slot:hover {
   background-color: rgba(30, 144, 255, 0.05);
 }
@@ -180,11 +184,19 @@ body {
   .lblb-components__comp-slot {
     max-width: 540px;
   }
+
+  .lblb-components__comp-slot_wide {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .lblb-components__comp-slot {
     max-width: 440px;
+  }
+
+  .lblb-components__comp-slot_wide {
+    max-width: 100%;
   }
 }
 
@@ -292,7 +304,9 @@ body {
   color: #CCC;
 }
 
-
+.lblb-hero .lblb-page-title h1 {
+  color: #FFFFFF;
+}
 
 
 
