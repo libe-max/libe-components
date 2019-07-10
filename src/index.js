@@ -35,6 +35,10 @@ import RasterMap from './components/blocks/RasterMap'
 import Tweet from './components/blocks/Tweet'
 import Hero from './components/blocks/Hero'
 
+// Layouts
+import Grid from './components/layouts/Grid'
+import Slot from './components/layouts/Slot'
+
 class App extends React.Component {
   constructor () {
     super()
@@ -680,6 +684,7 @@ class App extends React.Component {
               <Hero textShadow
                 illustrationShadow
                 height={30}
+                fullHeight
                 bgImage='https://static1.squarespace.com/static/59286b6a17bffc4f4514ab4e/59286ba0ff7c5099b2a0ec5c/592892bd46c3c4da9e2f9fce/1495831563674/Club21Matchbook-lg.jpg?format=2500w'
                 illustration='./image-for-hero-component.png'>
                 <Slug huge>Un p'tit slug</Slug><br /><br />
@@ -690,6 +695,53 @@ class App extends React.Component {
           </div>
         </div>
 
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * LAYOUTS
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
+        <h2 className={`${c}__family-name`}>Layouts</h2>
+
+        {/* Grid & Slots */}
+        {/* [WIP] problem with noGutter concept */}
+        <h3 className={`${c}__component-name`}>Grid & Slots</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot ${c}__comp-slot_wide`}>
+            <div className={`${c}__component`}>
+              <Grid width={[12, 7, 4]} gutterSize={[2, 1, 0.5]} noSideGutter>
+                <Slot width={[6, null, null]}><Paragraph big>6</Paragraph></Slot>
+                <Slot width={[6, null, null]}><Paragraph big>6</Paragraph></Slot>
+                <Slot width={[5, null, null]}><Paragraph big>5</Paragraph></Slot>
+                <Slot width={[7, null, null]}><Paragraph big>7</Paragraph></Slot>
+                <Slot width={[4, null, null]}><Paragraph big>4</Paragraph></Slot>
+                <Slot width={[8, null, null]}><Paragraph big>8</Paragraph></Slot>
+                <Slot width={[3, null, null]}><Paragraph big>3</Paragraph></Slot>
+                <Slot width={[9, null, null]}><Paragraph big>9</Paragraph></Slot>
+                <Slot width={[2, null, null]}><Paragraph big>2</Paragraph></Slot>
+                <Slot width={[10, null, null]}><Paragraph big>10</Paragraph></Slot>
+                <Slot width={[1, null, null]}><Paragraph big>1</Paragraph></Slot>
+                <Slot width={[11, null, null]}><Paragraph big>11</Paragraph></Slot>
+                <Slot width={[12, null, null]}><Paragraph big>12</Paragraph></Slot>
+                <Slot width={[null, 4, null]}><Paragraph big>4</Paragraph></Slot>
+                <Slot width={[null, 3, null]}><Paragraph big>3</Paragraph></Slot>
+                <Slot width={[null, 5, null]}><Paragraph big>5</Paragraph></Slot>
+                <Slot width={[null, 2, null]}><Paragraph big>2</Paragraph></Slot>
+                <Slot width={[null, 6, null]}><Paragraph big>6</Paragraph></Slot>
+                <Slot width={[null, 1, null]}><Paragraph big>1</Paragraph></Slot>
+                <Slot width={[null, 7, null]}><Paragraph big>7</Paragraph></Slot>
+                <Slot width={[null, null, 2]}><Paragraph big>2</Paragraph></Slot>
+                <Slot width={[null, null, 2]}><Paragraph big>2</Paragraph></Slot>
+                <Slot width={[null, null, 1]}><Paragraph big>1</Paragraph></Slot>
+                <Slot width={[null, null, 3]}><Paragraph big>3</Paragraph></Slot>
+                <Slot width={[null, null, 4]}><Paragraph big>4</Paragraph></Slot>
+              </Grid>
+            </div>
+            <div className={`${c}__component-props`}>
+              Grid: width, gutterSize, noSideGutter,<br />
+              Slot: width
+            </div>
+          </div>
+        </div>
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *
