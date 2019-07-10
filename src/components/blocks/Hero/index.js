@@ -42,7 +42,7 @@ export default class Hero extends Component {
 
     /* Inner logic */
     const wrapperStyle = {
-      height: props.fullHeight ? `calc(100vh - 4rem)` : `calc(${props.height}rem - 4rem)`,
+      height: props.fullHeight ? `100vh` : `${props.height}rem`,
       backgroundColor: `${props.bgColor}`,
       backgroundImage: props.bgImage ? `url(${props.bgImage})` : undefined
     }
