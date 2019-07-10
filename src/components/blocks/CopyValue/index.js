@@ -79,6 +79,7 @@ export default class CopyValue extends Component {
       <input className={`${c}__input`}
         ref={n => { this.input = n }}
         value={props.value}
+        onFocus={this.copyToClipboard}
         type='text'
         readOnly />
     </div>
