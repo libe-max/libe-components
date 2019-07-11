@@ -10,7 +10,7 @@ import Wrapper from './style'
  *   Container for Slots and responsive design logic
  *
  *   PROPS
- *   width, gutterSize, noSideGutter
+ *   width, gutterSize, noSideGutter, showGrid
  *
  */
 
@@ -67,6 +67,7 @@ export default class Grid extends Component {
     /* Assign classes */
     const classes = [c]
     if (props.noSideGutter) classes.push(`${c}_no-side-gutter`)
+    if (props.showGrid) classes.push(`${c}_show-grid`)
 
     /* Inner logic */
     const interpretedProps = this.interpretProps()
@@ -76,11 +77,31 @@ export default class Grid extends Component {
         gridProps: interpretedProps
       })
     })
+    const visibleGrids = {
+      lg: new Array(interpretedProps.lgWidth).fill(null).map((e, i) => {
+        return <div className={`${c}__visible-column`} key={i}>
+          <div className={`${c}__visible-column-inner`} />
+        </div>
+      }),
+      md: new Array(interpretedProps.mdWidth).fill(null).map((e, i) => {
+        return <div className={`${c}__visible-column`} key={i}>
+          <div className={`${c}__visible-column-inner`} />
+        </div>
+      }),
+      sm: new Array(interpretedProps.smWidth).fill(null).map((e, i) => {
+        return <div className={`${c}__visible-column`} key={i}>
+          <div className={`${c}__visible-column-inner`} />
+        </div>
+      })
+    }
 
     /* Display component */
     return <Wrapper className={classes.join(' ')}
       {...interpretedProps}>
-      {slots}
+      <div className={`${c}__visible-grid ${c}__visible-grid_lg`}>{visibleGrids.lg}</div>
+      <div className={`${c}__visible-grid ${c}__visible-grid_md`}>{visibleGrids.md}</div>
+      <div className={`${c}__visible-grid ${c}__visible-grid_sm`}>{visibleGrids.sm}</div>
+      <div className={`${c}__inner`}>{slots}</div>
     </Wrapper>
   }
 }

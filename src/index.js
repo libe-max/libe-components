@@ -703,12 +703,11 @@ class App extends React.Component {
         <h2 className={`${c}__family-name`}>Layouts</h2>
 
         {/* Grid & Slots */}
-        {/* [WIP] problem with noGutter concept */}
         <h3 className={`${c}__component-name`}>Grid & Slots</h3>
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot ${c}__comp-slot_wide`}>
             <div className={`${c}__component`}>
-              <Grid width={[12, 7, 4]} gutterSize={[2, 1, 0.5]} noSideGutter>
+              <Grid width={[12, 7, 4]} gutterSize={[2, 1, 0.5]} noSideGutter showGrid>
                 <Slot width={[6, null, null]}><Paragraph big>6</Paragraph></Slot>
                 <Slot width={[6, null, null]}><Paragraph big>6</Paragraph></Slot>
                 <Slot width={[5, null, null]}><Paragraph big>5</Paragraph></Slot>
@@ -737,7 +736,7 @@ class App extends React.Component {
               </Grid>
             </div>
             <div className={`${c}__component-props`}>
-              Grid: width, gutterSize, noSideGutter,<br />
+              Grid: width, gutterSize, noSideGutter, showGrid<br />
               Slot: width
             </div>
           </div>
