@@ -51,10 +51,9 @@ export default class Grid extends Component {
         : parseFloat(props.width, 10),
       smWidth: Array.isArray(props.width)
         ? props.width[2] ? parseFloat(props.width[2], 10) : 0
-        : parseFloat(props.width, 10),
+        : parseFloat(props.width, 10)
     }
   }
-
 
   /* * * * * * * * * * * * * * * * *
    *
@@ -63,7 +62,7 @@ export default class Grid extends Component {
    * * * * * * * * * * * * * * * * */
   render () {
     const { c, props } = this
-    
+
     /* Assign classes */
     const classes = [c]
     if (props.noSideGutter) classes.push(`${c}_no-side-gutter`)
@@ -114,4 +113,3 @@ Grid.propTypes = {
 Grid.defaultProps = {
   prop: null
 }
-

@@ -54,7 +54,7 @@ export default class Slot extends Component {
    * * * * * * * * * * * * * * * * */
   render () {
     const { c, props } = this
-    
+
     /* Assign classes */
     const classes = [c]
 
@@ -78,4 +78,3 @@ Slot.propTypes = {
 Slot.defaultProps = {
   prop: null
 }
-

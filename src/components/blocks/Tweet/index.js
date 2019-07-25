@@ -67,7 +67,7 @@ export default class Tweet extends Component {
 
     /* Inner logic */
     const { content, author, link, date } = this.getDataFromContentProp(props.content)
-    
+
     /* Assign classes */
     const classes = [c]
     if (props.small) classes.push(`${c}_small`)
@@ -82,7 +82,7 @@ export default class Tweet extends Component {
         <a href={link}
           rel='noopener noreferrer'
           target='_blank'>
-          <img src={props.img} alt={props.imgAlt ? props.imgAlt : 'Image du tweet'}/>
+          <img src={props.img} alt={props.imgAlt ? props.imgAlt : 'Image du tweet'} />
         </a>
       </div>
       <div className={`${c}__content`}>
@@ -125,4 +125,3 @@ Tweet.propTypes = {
 Tweet.defaultProps = {
   content: `<blockquote><p>Tweet vide !</p>&mdash; Anonyme<a href="#">January 1, 1970</a></blockquote>`
 }
-

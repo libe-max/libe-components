@@ -35,7 +35,7 @@ export default class Hero extends Component {
    * * * * * * * * * * * * * * * * */
   render () {
     const { c, props } = this
-    
+
     /* Assign classes */
     const classes = [c]
     if (props.textShadow) classes.push(`${c}_text-shadow`)
@@ -88,4 +88,3 @@ Hero.defaultProps = {
   height: 20,
   textPosition: '50 0'
 }
-
