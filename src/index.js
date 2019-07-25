@@ -681,17 +681,14 @@ class App extends React.Component {
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot ${c}__comp-slot_wide`}>
             <div className={`${c}__component`}>
-              <Hero textShadow
-                illustrationShadow
-                height={30}
-                fullHeight
-                bgImage='https://static1.squarespace.com/static/59286b6a17bffc4f4514ab4e/59286ba0ff7c5099b2a0ec5c/592892bd46c3c4da9e2f9fce/1495831563674/Club21Matchbook-lg.jpg?format=2500w'
+              <Hero parallax textShadow illustrationShadow
+                height={30} fullHeight bgImage='https://static1.squarespace.com/static/59286b6a17bffc4f4514ab4e/59286ba0ff7c5099b2a0ec5c/592892bd46c3c4da9e2f9fce/1495831563674/Club21Matchbook-lg.jpg?format=2500w'
                 illustration='./image-for-hero-component.png'>
                 <Slug huge>Un p'tit slug</Slug><br /><br />
                 <PageTitle>Oh les belles images !</PageTitle>
               </Hero>
             </div>
-            <div className={`${c}__component-props`}>children, bgColor, illustration</div>
+            <div className={`${c}__component-props`}>children, height, maxContentWidth, fullHeight, bgColor, bgImage, parallax, illustration, illustrationPosition, illustrationShadow, textPosition, textShadow</div>
           </div>
         </div>
 

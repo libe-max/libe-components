@@ -11,8 +11,9 @@ import PropTypes from 'prop-types'
  *
  *   PROPS
  *   children, height, maxContentWidth, fullHeight,
- *   bgColor, bgImage, illustration, illustrationPosition,
- *   illustrationShadow, textPosition, textShadow, 
+ *   bgColor, bgImage, parallax, illustration,
+ *   illustrationPosition, illustrationShadow, textPosition,
+ *   textShadow
  *
  */
 
@@ -39,6 +40,7 @@ export default class Hero extends Component {
     const classes = [c]
     if (props.textShadow) classes.push(`${c}_text-shadow`)
     if (props.illustrationShadow) classes.push(`${c}_illustration-shadow`)
+    if (props.parallax) classes.push(`${c}_parallax`)
 
     /* Inner logic */
     const wrapperStyle = {
