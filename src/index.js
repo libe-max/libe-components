@@ -730,6 +730,7 @@ class App extends React.Component {
                 <Slot width={[null, null, 1]}><Paragraph big>1</Paragraph></Slot>
                 <Slot width={[null, null, 3]}><Paragraph big>3</Paragraph></Slot>
                 <Slot width={[null, null, 4]}><Paragraph big>4</Paragraph></Slot>
+                <Slot width={[4, 3, 3]} offset={[8, 4, 1]}><Paragraph big>Offset</Paragraph></Slot>
               </Grid>
             </div>
             <div className={`${c}__component-props`}>

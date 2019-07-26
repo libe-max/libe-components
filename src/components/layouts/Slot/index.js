@@ -11,7 +11,7 @@ import Wrapper from './style'
  *   itself according to screen size
  *
  *   PROPS
- *   width
+ *   width, offset
  *
  */
 
@@ -43,7 +43,16 @@ export default class Slot extends Component {
         : parseFloat(props.width, 10),
       smWidth: Array.isArray(props.width)
         ? props.width[2] ? parseFloat(props.width[2], 10) : 0
-        : parseFloat(props.width, 10)
+        : parseFloat(props.width, 10),
+      lgOffset: Array.isArray(props.offset)
+        ? props.offset[0] ? parseFloat(props.offset[0], 10) : 0
+        : parseFloat(props.offset, 10),
+      mdOffset: Array.isArray(props.offset)
+        ? props.offset[1] ? parseFloat(props.offset[1], 10) : 0
+        : parseFloat(props.offset, 10),
+      smOffset: Array.isArray(props.offset)
+        ? props.offset[2] ? parseFloat(props.offset[2], 10) : 0
+        : parseFloat(props.offset, 10)
     }
   }
 
