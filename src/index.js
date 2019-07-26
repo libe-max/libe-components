@@ -734,8 +734,8 @@ class App extends React.Component {
               </Grid>
             </div>
             <div className={`${c}__component-props`}>
-              Grid: width, gutterSize, noSideGutter, showGrid<br />
-              Slot: width
+              Grid: width, gutterSize, noSideGutter, showGrid, className<br />
+              Slot: width, offset, className
             </div>
           </div>
         </div>

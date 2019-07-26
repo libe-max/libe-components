@@ -65,6 +65,7 @@ export default class Grid extends Component {
 
     /* Assign classes */
     const classes = [c]
+    if (props.className) classes.push(props.className)
     if (props.noSideGutter) classes.push(`${c}_no-side-gutter`)
     if (props.showGrid) classes.push(`${c}_show-grid`)
 

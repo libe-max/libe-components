@@ -66,6 +66,7 @@ export default class Slot extends Component {
 
     /* Assign classes */
     const classes = [c]
+    if (props.className) classes.push(props.className)
 
     /* Inner logic */
     const interpretedProps = this.interpretProps()
