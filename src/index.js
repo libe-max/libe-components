@@ -291,8 +291,8 @@ class App extends React.Component {
             <div className={`${c}__component-variant`}>small</div>
             <div className={`${c}__component`}>
               <ArticleMeta small
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -312,8 +312,8 @@ class App extends React.Component {
             <div className={`${c}__component-variant`}>- none -</div>
             <div className={`${c}__component`}>
               <ArticleMeta
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -333,8 +333,8 @@ class App extends React.Component {
             <div className={`${c}__component-variant`}>big</div>
             <div className={`${c}__component`}>
               <ArticleMeta big
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -354,8 +354,8 @@ class App extends React.Component {
             <div className={`${c}__component-variant`}>huge</div>
             <div className={`${c}__component`}>
               <ArticleMeta huge
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -378,8 +378,8 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <ArticleMeta small
                 inline
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -400,8 +400,8 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <ArticleMeta
                 inline
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -422,8 +422,8 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <ArticleMeta big
                 inline
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },
@@ -444,8 +444,8 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <ArticleMeta huge
                 inline
-                publishedOn={Date.now() - 3e12}
-                updatedOn={Date.now() - 2e12}
+                publishedOn={Date.now() - 2 ** 40}
+                updatedOn={Date.now() - 2 ** 39}
                 authors={[
                   { name: 'Marinette', link: '#' },
                   { name: 'Jeannot', link: '#' },

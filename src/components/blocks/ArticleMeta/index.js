@@ -73,10 +73,14 @@ export default class ArticleMeta extends Component {
     }
     // Convert timestamps into readable dates
     const displayPublishedOn = props.publishedOn
-      ? moment(props.publishedOn).format('D MMMM YYYY à HH:MM')
+      ? moment(props.publishedOn, 'x') > 31
+        ? moment(props.publishedOn, 'x').format('D MMMM YYYY à HH:mm')
+        : moment(props.publishedOn, 'DD/MM/YYYY HH:MM').format('D MMMM YYYY à HH:mm')
       : undefined
     const displayUpdatedOn = props.updatedOn
-      ? moment(props.updatedOn).format('D MMMM YYYY à HH:MM')
+      ? moment(props.updatedOn, 'x') > 31
+        ? moment(props.updatedOn, 'x').format('D MMMM YYYY à HH:mm')
+        : moment(props.updatedOn, 'DD/MM/YYYY HH:MM').format('D MMMM YYYY à HH:mm')
       : undefined
 
     // Join all roles in a single line
