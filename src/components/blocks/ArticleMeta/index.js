@@ -75,12 +75,12 @@ export default class ArticleMeta extends Component {
     const displayPublishedOn = props.publishedOn
       ? moment(props.publishedOn, 'x') > 31
         ? moment(props.publishedOn, 'x').format('D MMMM YYYY à HH:mm')
-        : moment(props.publishedOn, 'DD/MM/YYYY HH:MM').format('D MMMM YYYY à HH:mm')
+        : moment(props.publishedOn, 'DD/MM/YYYY HH:mm').format('D MMMM YYYY à HH:mm')
       : undefined
     const displayUpdatedOn = props.updatedOn
       ? moment(props.updatedOn, 'x') > 31
         ? moment(props.updatedOn, 'x').format('D MMMM YYYY à HH:mm')
-        : moment(props.updatedOn, 'DD/MM/YYYY HH:MM').format('D MMMM YYYY à HH:mm')
+        : moment(props.updatedOn, 'DD/MM/YYYY HH:mm').format('D MMMM YYYY à HH:mm')
       : undefined
 
     // Join all roles in a single line
