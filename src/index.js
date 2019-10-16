@@ -120,6 +120,24 @@ class App extends React.Component {
             </div>
 
             <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/magnifying-glass-icon_24.svg`} />
+              <div className={`${c}__component-props`}>magnifying-glass-icon_24</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/magnifying-glass-icon_32.svg`} />
+              <div className={`${c}__component-props`}>magnifying-glass-icon_32</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/magnifying-glass-icon_40.svg`} />
+              <div className={`${c}__component-props`}>magnifying-glass-icon_40</div>
+            </div>
+            <div className={`${c}__component`}>
+              <Svg src={`${staticsRootUrl}/assets/magnifying-glass-icon_64.svg`} />
+              <div className={`${c}__component-props`}>magnifying-glass-icon_64</div>
+            </div>
+
+
+            <div className={`${c}__component`}>
               <Svg src={`${staticsRootUrl}/assets/loader-icon_64.svg`} />
               <div className={`${c}__component-props`}>loader-icon_64</div>
             </div>
