@@ -65,7 +65,7 @@ export default class ArticleMeta extends Component {
           ? <span className={`${c}__person`} key={`${i}-${alphaNumRole}`}><a href={author.link}>{author.name}</a></span>
           : <span className={`${c}__person`} key={`${i}-${alphaNumRole}`}>{author.name}</span>
         const commaSeparator = <span className={`${c}__label`} key={`${i}-${alphaNumRole}-sep`}>, </span>
-        const andSeparator = <span className={`${c}__label`} key={`${i}-${alphaNumRole}-sep`}>, et </span>
+        const andSeparator = <span className={`${c}__label`} key={`${i}-${alphaNumRole}-sep`}> et </span>
         if (i !== 0 && !isLast) roleGroupsJointWithCommas[role].push(commaSeparator, displayAuthor)
         else if (i !== 0 && isLast) roleGroupsJointWithCommas[role].push(andSeparator, displayAuthor)
         else roleGroupsJointWithCommas[role].push(displayAuthor)
