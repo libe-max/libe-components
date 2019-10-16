@@ -7,6 +7,9 @@ import { staticsRootUrl } from './components/.globals'
 // Primitives
 import Svg from './components/primitives/Svg'
 
+// Logic
+import JSXInterpreter from './components/logic/JSXInterpreter'
+
 // Text levels
 import PageTitle from './components/text-levels/PageTitle'
 import InterTitle from './components/text-levels/InterTitle'
@@ -143,6 +146,39 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+
+        {/* * * * * * * * * * * * * * * * * * * * * * * * *
+          *
+          * LOGIC
+          *
+          * * * * * * * * * * * * * * * * * * * * * * * * */}
+        <h2 className={`${c}__family-name`}>Blocks</h2>
+        
+        {/* JSX interpreter */}
+        <h3 className={`${c}__component-name`}>JSXInterpreter</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component`}>
+              <JSXInterpreter content={`
+                <div>
+                  Lorem ipsum dolor
+                  <span>
+                    Hihi héhé
+                    <img src='http://image.com/image.jpg' />
+                  </span>
+                  <<Loader />>
+                  <<CopyValue value='Copiez moi' label='Copier' successLabel='Copié !' />>
+                  <<Article>>
+                    <<Loader />>
+                  </Article>>
+                </div>
+                `} />
+            </div>
+            <div className={`${c}__component-props`}>
+              - none -
+            </div>
+          </div>
+        </div>                
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *
