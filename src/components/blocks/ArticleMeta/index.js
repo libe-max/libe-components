@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import moment from 'moment'
 import 'moment/locale/fr'
 import Annotation from '../../text-levels/Annotation'
@@ -15,9 +16,8 @@ import Annotation from '../../text-levels/Annotation'
  *   authors, publishedOn, updatedOn, inline
  *
  *   PROPS STRUCTURE
- *   authors expects an object litteral or an array of
- *   object litterals, containing 3 fields: name, role, and
- *   link.
+ *   authors expects an array of object litterals,
+ *   containing 3 fields: name, role, and link.
  *
  */
 
@@ -42,11 +42,8 @@ export default class ArticleMeta extends Component {
 
     // Group authors by role, ordered by first appearance
     // of a role member in authors list
-    const authors = props.authors
-      ? Array.isArray(props.authors) ? props.authors : [props.authors]
-      : undefined
     const roleGroups = {}
-    authors.forEach(author => {
+    props.authors.forEach(author => {
       const role = !author.role
         ? 'author'
         : author.role
@@ -180,4 +177,20 @@ export default class ArticleMeta extends Component {
       </Annotation>
     </div>
   }
+}
+
+/* * * * * Prop types * * * * */
+
+ArticleMeta.propTypes = {
+  authors: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  publishedOn: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  updatedOn: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  small: PropTypes.bool,
+  big: PropTypes.bool,
+  huge: PropTypes.bool,
+  inline: PropTypes.bool
+}
+
+ArticleMeta.defaultProps = {
+  authors: []
 }
