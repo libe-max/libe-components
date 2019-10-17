@@ -54,6 +54,7 @@ class App extends React.Component {
   render () {
     const { state, c } = this
     const { textLevelsSize: txtLvl } = state
+    var tag = 'div'
 
     return (
       <div className={`${c}`}>
@@ -139,7 +140,6 @@ class App extends React.Component {
               <div className={`${c}__component-props`}>magnifying-glass-icon_64</div>
             </div>
 
-
             <div className={`${c}__component`}>
               <Svg src={`${staticsRootUrl}/assets/loader-icon_64.svg`} />
               <div className={`${c}__component-props`}>loader-icon_64</div>
@@ -159,23 +159,18 @@ class App extends React.Component {
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component`}>
-              <JSXInterpreter content={`
-                <div>
-                  Lorem ipsum dolor
-                  <span>
-                    Hihi héhé
-                    <img src='http://image.com/image.jpg' />
-                  </span>
-                  <<Loader />>
-                  <<CopyValue value='Copiez moi' label='Copier' successLabel='Copié !' />>
-                  <<Article>>
-                    <<Loader />>
-                  </Article>>
-                </div>
-                `} />
+              <JSXInterpreter content={`<div style="{{'background': 'rgba(33, 33, 33, .05)'}}">
+                <grid width="{4}"><slot><paragraph>Interpreted grid slot</paragraph></slot></grid>
+                <articlemeta authors="{[{
+                  'name': 'Interpreted ArticleMeta With A Q\\'uote',
+                  'role': 'Design',
+                  'link': 'http://google.com'
+                }]}" />
+              </div>`} />
             </div>
+
             <div className={`${c}__component-props`}>
-              - none -
+              content
             </div>
           </div>
         </div>                

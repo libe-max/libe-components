@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import interpretJSX from './interpret-JSX'
 
 /*
@@ -41,12 +42,12 @@ export default class JSXInterpreter extends Component {
     const classes = [c]
 
     return <div className={classes.join(' ')}>
-      JSX Interpreter
+      {interpreted}
     </div>
   }
 }
 
 /* * * * * Prop types * * * * */
 
-JSXInterpreter.propTypes = {}
+JSXInterpreter.propTypes = { content: PropTypes.string }
 JSXInterpreter.defaultProps = {}
