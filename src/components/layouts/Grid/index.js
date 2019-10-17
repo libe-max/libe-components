@@ -107,10 +107,17 @@ export default class Grid extends Component {
 }
 
 /* * * * * Prop types * * * * */
+
 Grid.propTypes = {
-  prop: PropTypes.string
+  width: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
+  gutterSize: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
+  noSideGutter: PropTypes.bool,
+  showGrid: PropTypes.bool,
 }
 
 Grid.defaultProps = {
-  prop: null
+  width: 12,
+  gutterSize: 1,
+  noSideGutter: false,
+  showGrid: true
 }
