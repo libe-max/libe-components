@@ -81,10 +81,13 @@ export default class Slot extends Component {
 }
 
 /* * * * * Prop types * * * * */
+
 Slot.propTypes = {
-  prop: PropTypes.string
+  width: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
+  offset: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number])
 }
 
 Slot.defaultProps = {
-  prop: null
+  width: 1,
+  offset: 0
 }
