@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { proxyRootUrl } from '../../.globals.js'
 import Paragraph from '../../text-levels/Paragraph'
-import { Parser } from 'html-to-react'
-import moment from 'moment'
+// import moment from 'moment'
 
 /*
  *   Tweet component
@@ -12,7 +12,7 @@ import moment from 'moment'
  *   Tweet embed component
  *
  *   PROPS
- *   content, small, big, huge, literary, img, imgAlt
+ *   url, small, big, huge, literary
  *
  */
 
@@ -25,36 +25,22 @@ export default class Tweet extends Component {
   constructor () {
     super()
     this.c = 'lblb-tweet'
-    this.h2r = new Parser()
-    this.getDataFromContentProp = this.getDataFromContentProp.bind(this)
+    this.state = {
+      loading: true,
+      error: null,
+      tweet_data: null
+    }
   }
 
-  /* * * * * * * * * * * * * * * * *
-   *
-   * GET DATA FROM CONTENT PROP
-   *
-   * * * * * * * * * * * * * * * * */
-  getDataFromContentProp (input) {
-    const container = document.createElement('div')
-    container.innerHTML += input
-    const [blockquote] = container.children
-    const tweetContent = blockquote.querySelector('p')
-    const signatureText = blockquote.innerHTML.replace(tweetContent.outerHTML, '')
-    const signature = document.createElement('div')
-    signature.innerHTML = signatureText
-    const date = signature.querySelector('a')
-    const dateText = date.innerHTML
-    moment.locale('en')
-    const momentDate = moment(dateText, 'MMMM D, YYYY')
-    const displayDate = momentDate.locale('fr').format('D MMMM YYYY')
-    const author = signature.innerHTML.replace(date.outerHTML, '').replace('— ', '')
-    const tweetLink = date.getAttribute('href')
-    return {
-      content: tweetContent.innerHTML,
-      author: author,
-      link: tweetLink,
-      date: displayDate
-    }
+  componentDidMount () {
+    const splitdUrl = this.props.url.split('/')
+    const tweetId = splitdUrl.slice(-1)
+    window.fetch(`${proxyRootUrl}/twitter/status/${tweetId}`)
+      .then(r => r.json())
+      .then(res => res.err
+        ? this.setState({ loading: false, error: res.err })
+        : this.setState({ loading: false, error: null, tweet_data: res.data })
+      ).catch(err => this.setState({ loading: false, error: err, tweet_data: null }))
   }
 
   /* * * * * * * * * * * * * * * * *
@@ -63,34 +49,45 @@ export default class Tweet extends Component {
    *
    * * * * * * * * * * * * * * * * */
   render () {
-    const { c, h2r, props } = this
+    const { c, props, state } = this
 
     /* Inner logic */
-    const { content, author, link, date } = this.getDataFromContentProp(props.content)
+    const hasImg = state.tweet_data
+      && state.tweet_data.entities.media
+      && state.tweet_data.entities.media.length
+    const imgUrl = hasImg
+      ? state.tweet_data.entities.media[0].media_url_https
+      : ''
 
     /* Assign classes */
     const classes = [c]
+    if (state.loading) classes.push(`${c}_loading`)
     if (props.small) classes.push(`${c}_small`)
     if (props.big) classes.push(`${c}_big`)
     if (props.huge) classes.push(`${c}_huge`)
     if (props.literary) classes.push(`${c}_literary`)
-    if (props.img) classes.push(`${c}_with-img`)
+    if (hasImg) classes.push(`${c}_with-img`)
 
     /* Display component */
-    return <div className={classes.join(' ')}>
-      <div className={`${c}__image`} style={{ backgroundImage: `url(${props.img})` }}>
-        <a href={link}
-          rel='noopener noreferrer'
-          target='_blank'>
-          <img src={props.img} alt={props.imgAlt ? props.imgAlt : 'Image du tweet'} />
-        </a>
+    if (state.loading) {
+      return <div className={classes.join(' ')}>
+        Tweet LOADING
+      </div>
+    } else if (state.error) {
+      return <div className={classes.join(' ')}>
+        Tweet ERROR
+      </div>
+    } else {
+      return <div className={classes.join(' ')}>
+      <div className={`${c}__image`} style={{ backgroundImage: `url(${imgUrl})` }}>
+        <a href={'link'} rel='noopener noreferrer' target='_blank'><img src={imgUrl} /></a>
       </div>
       <div className={`${c}__content`}>
         <Paragraph small={props.small}
           big={props.big}
           huge={props.huge}
           literary={props.literary}>
-          {h2r.parse(content)}
+          {state.tweet_data.full_text}
         </Paragraph>
       </div>
       <div className={`${c}__meta`}>
@@ -98,30 +95,31 @@ export default class Tweet extends Component {
           <Paragraph small={(!props.big && !props.huge)}
             big={props.huge}
             literary={props.literary}>
-            {author}
+            {'author'}
           </Paragraph>
         </span>
         <span className={`${c}__date`}>
           <Paragraph small={(!props.big && !props.huge)}
             big={props.huge}
             literary={props.literary}>
-            <a href={link}
+            <a href={'link'}
               rel='noopener noreferrer'
               target='_blank'>
-              {date}
+              {'date'}
             </a>
           </Paragraph>
         </span>
       </div>
     </div>
+    }
   }
 }
 
 /* * * * * Prop types * * * * */
 Tweet.propTypes = {
-  prop: PropTypes.string
+  url: PropTypes.string
 }
 
 Tweet.defaultProps = {
-  content: `<blockquote><p>Tweet vide !</p>&mdash; Anonyme<a href="#">January 1, 1970</a></blockquote>`
+  url: '20'
 }

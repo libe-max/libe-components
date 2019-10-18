@@ -152,7 +152,7 @@ class App extends React.Component {
           * LOGIC
           *
           * * * * * * * * * * * * * * * * * * * * * * * * */}
-        <h2 className={`${c}__family-name`}>Blocks</h2>
+        <h2 className={`${c}__family-name`}>Logic</h2>
         
         {/* JSX interpreter */}
         <h3 className={`${c}__component-name`}>JSXInterpreter</h3>
@@ -160,7 +160,7 @@ class App extends React.Component {
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component`}>
               <JSXInterpreter content={`<div style="{{'background': 'rgba(33, 33, 33, .05)'}}">
-                <grid width="{4}"><slot><paragraph>Interpreted grid slot</paragraph></slot></grid>
+                <grid width="{4}"><slot width="{4}"><paragraph>Interpreted grid slot</paragraph></slot></grid>
                 <articlemeta authors="{[{
                   'name': 'Interpreted ArticleMeta With A Q\\'uote',
                   'role': 'Design',
@@ -718,8 +718,7 @@ class App extends React.Component {
         <div className={`${c}__comp-row`}>
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component`}>
-              <Tweet img='https://pbs.twimg.com/media/D3fDLpGW0AAOyBE.jpg' content={`<blockquote class="twitter-tweet" data-lang="en"><p lang="fr" dir="ltr">Le biau brevage qv’icelui ! Haravt ! <a href="https://t.co/AurkFPwDS3">pic.twitter.com/AurkFPwDS3</a></p>&mdash; Jehan le Brave (@Jehanlb) <a href="https://twitter.com/Jehanlb/status/1114574043183747072?ref_src=twsrc%5Etfw">April 6, 2019</a></blockquote>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`} />
+              <Tweet url='https://twitter.com/Jehanlb/status/1183727146822443008' />
             </div>
             <div className={`${c}__component-props`}>content, small, big, huge, literary, img, profilePic</div>
           </div>

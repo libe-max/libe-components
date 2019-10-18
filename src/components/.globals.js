@@ -7,10 +7,16 @@ const staticsRootUrl = env === 'production'
   : devStaticsRootUrl
 
 const devApiRootUrl = 'http://localhost:3004/api'
-const prodApiRootUrl = 'https://libe-labo.site/api'
+const prodApiRootUrl = 'https://libe-labo-2.site/api'
 const apiRootUrl = env === 'production'
   ? prodApiRootUrl
   : devApiRootUrl
+
+const devProxyRootUrl = 'http://localhost:3004/proxy'
+const prodProxyRootUrl = 'https://libe-labo-2.site/proxy'
+const proxyRootUrl = env === 'production'
+  ? prodProxyRootUrl
+  : devProxyRootUrl
 
 export {
   env,
@@ -19,5 +25,8 @@ export {
   staticsRootUrl,
   devApiRootUrl,
   prodApiRootUrl,
-  apiRootUrl
+  apiRootUrl,
+  devProxyRootUrl,
+  prodProxyRootUrl,
+  proxyRootUrl
 }
