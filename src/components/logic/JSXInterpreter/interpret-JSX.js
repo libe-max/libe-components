@@ -53,7 +53,7 @@ function recurseJson2JSX (input) {
       if (!valueIsJavascriptExpression) attributes[key] = jointValue
       else {
         const valueWithTempReplacedEscapedSglQuotes = jointValue.slice(1, -1).replace(/\\'/gm, '[SGLQUOTE]')
-        const valueWithUnescapedSglQuotesReplacedToDoubleQuotes = valueWithTempReplacedEscapedSglQuotes.replace(/\'/gm, '"')
+        const valueWithUnescapedSglQuotesReplacedToDoubleQuotes = valueWithTempReplacedEscapedSglQuotes.replace(/'/gm, '"')
         const valueAsValidJson = valueWithUnescapedSglQuotesReplacedToDoubleQuotes.replace(/\[SGLQUOTE\]/gm, '\'')
         const javascriptExpression = JSON.parse(valueAsValidJson)
         attributes[key] = javascriptExpression

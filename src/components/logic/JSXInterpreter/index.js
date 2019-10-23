@@ -41,9 +41,9 @@ export default class JSXInterpreter extends Component {
     /* Assign classes */
     const classes = [c]
 
-    return <div className={classes.join(' ')}>
+    return <span className={classes.join(' ')}>
       {interpreted}
-    </div>
+    </span>
   }
 }
 
