@@ -17,6 +17,7 @@ import Tweet from '../../blocks/Tweet'
 
 import Grid from '../../layouts/Grid'
 import Slot from '../../layouts/Slot'
+import Article from '../../layouts/Article'
 
 import Heading from '../../primitives/Heading'
 import Svg from '../../primitives/Svg'
@@ -207,6 +208,7 @@ function recurseJson2JSX (input) {
     else if (tag === 'tweet') return children ? <Tweet {...attributes}>{children}</Tweet> : <Tweet {...attributes} />
     else if (tag === 'grid') return children ? <Grid {...attributes}>{children}</Grid> : <Grid {...attributes} />
     else if (tag === 'slot') return children ? <Slot {...attributes}>{children}</Slot> : <Slot {...attributes} />
+    else if (tag === 'libearticle') return children ? <Article {...attributes}>{children}</Article> : <Article {...attributes} />
     else if (tag === 'heading') return children ? <Heading {...attributes}>{children}</Heading> : <Heading {...attributes} />
     else if (tag === 'libesvg') return children ? <Svg {...attributes}>{children}</Svg> : <Svg {...attributes} />
     else if (tag === 'annotation') return children ? <Annotation {...attributes}>{children}</Annotation> : <Annotation {...attributes} />
