@@ -122,7 +122,7 @@ export default class Tweet extends Component {
       // Loaded
       return <div className={classes.join(' ')}>
       <div className={`${c}__image`} style={{ backgroundImage: `url(${imgUrl})` }}>
-        <a href={'Média du tweet'} rel='noopener noreferrer' target='_blank'><img src={imgUrl} /></a>
+        <img src={imgUrl} alt='Média associé au tweet' />
       </div>
       <div className={`${c}__content`}>
         <Paragraph small={props.small}
