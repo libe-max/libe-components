@@ -375,7 +375,7 @@ class App extends React.Component {
           *
           * * * * * * * * * * * * * * * * * * * * * * * * */}
         <h2 className={`${c}__family-name`}>Logic</h2>
-        
+
         {/* JSX interpreter */}
         <h3 className={`${c}__component-name`}>JSXInterpreter</h3>
         <div className={`${c}__comp-row`}>
@@ -395,7 +395,7 @@ class App extends React.Component {
               content
             </div>
           </div>
-        </div>                
+        </div>
 
         {/* * * * * * * * * * * * * * * * * * * * * * * * *
           *

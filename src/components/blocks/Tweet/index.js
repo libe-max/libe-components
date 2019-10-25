@@ -45,10 +45,10 @@ export default class Tweet extends Component {
     const tweetUrl = props.url.split('?')[0]
     const splUrl = tweetUrl.split('/').filter(e => e)
     const tweetId = splUrl.slice(-1)
-    if (splUrl[0] !== 'https:'
-      || splUrl[1] !== 'twitter.com'
-      || splUrl[3] !== 'status'
-      || !splUrl[4].match(/^[0-9]+$/)) {
+    if (splUrl[0] !== 'https:' ||
+      splUrl[1] !== 'twitter.com' ||
+      splUrl[3] !== 'status' ||
+      !splUrl[4].match(/^[0-9]+$/)) {
       console.warn(`Invalid Twitter URL: ${props.url}`)
       this.setState({
         loading: false,
@@ -74,9 +74,9 @@ export default class Tweet extends Component {
 
     /* Inner logic */
     const tweetUrl = props.url.split('?')[0]
-    const hasImg = state.tweet_data
-      && state.tweet_data.entities.media
-      && state.tweet_data.entities.media.length
+    const hasImg = state.tweet_data &&
+      state.tweet_data.entities.media &&
+      state.tweet_data.entities.media.length
     const imgUrl = hasImg ? state.tweet_data.entities.media[0].media_url_https : ''
 
     /* Assign classes */
@@ -121,38 +121,38 @@ export default class Tweet extends Component {
     } else {
       // Loaded
       return <div className={classes.join(' ')}>
-      <div className={`${c}__image`} style={{ backgroundImage: `url(${imgUrl})` }}>
-        <img src={imgUrl} alt='Média associé au tweet' />
-      </div>
-      <div className={`${c}__content`}>
-        <Paragraph small={props.small}
-          big={props.big}
-          huge={props.huge}
-          literary={props.literary}>
-          <JSXInterpreter content={text} />
-        </Paragraph>
-      </div>
-      <div className={`${c}__meta`}>
-        <span className={`${c}__author`}>
-          <Paragraph small={(!props.big && !props.huge)}
-            big={props.huge}
+        <div className={`${c}__image`} style={{ backgroundImage: `url(${imgUrl})` }}>
+          <img src={imgUrl} alt='Média associé au tweet' />
+        </div>
+        <div className={`${c}__content`}>
+          <Paragraph small={props.small}
+            big={props.big}
+            huge={props.huge}
             literary={props.literary}>
-            {user}
+            <JSXInterpreter content={text} />
           </Paragraph>
-        </span>
-        <span className={`${c}__date`}>
-          <Paragraph small={(!props.big && !props.huge)}
-            big={props.huge}
-            literary={props.literary}>
-            <a href={tweetUrl}
-              rel='noopener noreferrer'
-              target='_blank'>
-              {time}
-            </a>
-          </Paragraph>
-        </span>
+        </div>
+        <div className={`${c}__meta`}>
+          <span className={`${c}__author`}>
+            <Paragraph small={(!props.big && !props.huge)}
+              big={props.huge}
+              literary={props.literary}>
+              {user}
+            </Paragraph>
+          </span>
+          <span className={`${c}__date`}>
+            <Paragraph small={(!props.big && !props.huge)}
+              big={props.huge}
+              literary={props.literary}>
+              <a href={tweetUrl}
+                rel='noopener noreferrer'
+                target='_blank'>
+                {time}
+              </a>
+            </Paragraph>
+          </span>
+        </div>
       </div>
-    </div>
     }
   }
 }

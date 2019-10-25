@@ -45,13 +45,13 @@ export default class LoadingError extends Component {
         small={props.small}
         big={props.big}
         huge={props.huge}>{props.children
-        ? props.children
-        : <span>
+          ? props.children
+          : <span>
           Une erreur de chargement est survenue,<br />
-          <a href={window.location}>recharger la page ?</a><br /><br />
-          <LogoGlyph />
-        </span>
-      }</Paragraph>
+            <a href={window.location}>recharger la page ?</a><br /><br />
+            <LogoGlyph />
+          </span>
+        }</Paragraph>
     </div>
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 /*
  *   Article component
@@ -31,7 +30,7 @@ export default class Article extends Component {
    * * * * * * * * * * * * * * * * */
   render () {
     const { c, props } = this
-    
+
     /* Assign classes */
     const classes = [c]
 
@@ -45,4 +44,3 @@ export default class Article extends Component {
 /* * * * * Prop types * * * * */
 Article.propTypes = {}
 Article.defaultProps = {}
-

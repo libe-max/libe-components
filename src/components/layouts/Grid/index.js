@@ -112,7 +112,7 @@ Grid.propTypes = {
   width: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
   gutterSize: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
   noSideGutter: PropTypes.bool,
-  showGrid: PropTypes.bool,
+  showGrid: PropTypes.bool
 }
 
 Grid.defaultProps = {

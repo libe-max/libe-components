@@ -42,24 +42,26 @@ export default function interpretJSX (input) {
 
 function recurseJson2JSX (input) {
   const { node, tag, text, attr, child } = input
-  if (node === 'text') return text || ''
+  if (node === 'text') return text || ''
   else if (node === 'comment') return ''
   else if (node === 'root') return child ? child.map(kid => recurseJson2JSX(kid)) : []
   else if (node === 'element') {
     const children = child ? child.map(kid => recurseJson2JSX(kid)) : ''
     const attributes = { key: Math.random().toString(36).slice(2) }
-    if (attr) Object.keys(attr).forEach(key => {
-      const jointValue = Array.isArray(attr[key]) ? attr[key].join(' ') : attr[key]
-      const valueIsJavascriptExpression = (jointValue[0] === '{' && jointValue.slice(-1) === '}')
-      if (!valueIsJavascriptExpression) attributes[key] = jointValue
-      else {
-        const valueWithTempReplacedEscapedSglQuotes = jointValue.slice(1, -1).replace(/\\'/gm, '[SGLQUOTE]')
-        const valueWithUnescapedSglQuotesReplacedToDoubleQuotes = valueWithTempReplacedEscapedSglQuotes.replace(/'/gm, '"')
-        const valueAsValidJson = valueWithUnescapedSglQuotesReplacedToDoubleQuotes.replace(/\[SGLQUOTE\]/gm, '\'')
-        const javascriptExpression = JSON.parse(valueAsValidJson)
-        attributes[key] = javascriptExpression
-      }
-    })
+    if (attr) {
+      Object.keys(attr).forEach(key => {
+        const jointValue = Array.isArray(attr[key]) ? attr[key].join(' ') : attr[key]
+        const valueIsJavascriptExpression = (jointValue[0] === '{' && jointValue.slice(-1) === '}')
+        if (!valueIsJavascriptExpression) attributes[key] = jointValue
+        else {
+          const valueWithTempReplacedEscapedSglQuotes = jointValue.slice(1, -1).replace(/\\'/gm, '[SGLQUOTE]')
+          const valueWithUnescapedSglQuotesReplacedToDoubleQuotes = valueWithTempReplacedEscapedSglQuotes.replace(/'/gm, '"')
+          const valueAsValidJson = valueWithUnescapedSglQuotesReplacedToDoubleQuotes.replace(/\[SGLQUOTE\]/gm, '\'')
+          const javascriptExpression = JSON.parse(valueAsValidJson)
+          attributes[key] = javascriptExpression
+        }
+      })
+    }
     /* HTML5 valid tags */
     if (tag === 'a') return children ? <a {...attributes}>{children}</a> : <a {...attributes} />
     else if (tag === 'abbr') return children ? <abbr {...attributes}>{children}</abbr> : <abbr {...attributes} />
@@ -171,27 +173,51 @@ function recurseJson2JSX (input) {
     else if (tag === 'video') return children ? <video {...attributes}>{children}</video> : <video {...attributes} />
     else if (tag === 'wbr') return children ? <wbr {...attributes}>{children}</wbr> : <wbr {...attributes} />
     /* Discontinued support in HTML5 */
-    else if (tag === 'acronym') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'applet') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'basefont') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'big') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'center') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'dir') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'font') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'frame') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'frameset') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'noframes') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'strike') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
-    else if (tag === 'tt') { console.warn(`Warning : use of <${tag}> is deprecated in HTML5`); return '' }
+    else if (tag === 'acronym') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'applet') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'basefont') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'big') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'center') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'dir') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'font') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'frame') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'frameset') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'noframes') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'strike') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
+    } else if (tag === 'tt') {
+      console.warn(`Warning : use of <${tag}> is deprecated in HTML5`)
+      return ''
     /* SVG valid tags */
-    else if (tag === 'svg') return children ? <svg {...attributes}>{children}</svg> : <svg {...attributes} />
-    else if (tag ==='rect') return children ? <rect {...attributes}>{children}</rect> : <rect {...attributes} />
-    else if (tag ==='circle') return children ? <circle {...attributes}>{children}</circle> : <circle {...attributes} />
-    else if (tag ==='ellipse') return children ? <ellipse {...attributes}>{children}</ellipse> : <ellipse {...attributes} />
-    else if (tag ==='line') return children ? <line {...attributes}>{children}</line> : <line {...attributes} />
-    else if (tag ==='polyline') return children ? <polyline {...attributes}>{children}</polyline> : <polyline {...attributes} />
-    else if (tag ==='polygon') return children ? <polygon {...attributes}>{children}</polygon> : <polygon {...attributes} />
-    else if (tag ==='path') return children ? <path {...attributes}>{children}</path> : <path {...attributes} />
+    } else if (tag === 'svg') return children ? <svg {...attributes}>{children}</svg> : <svg {...attributes} />
+    else if (tag === 'rect') return children ? <rect {...attributes}>{children}</rect> : <rect {...attributes} />
+    else if (tag === 'circle') return children ? <circle {...attributes}>{children}</circle> : <circle {...attributes} />
+    else if (tag === 'ellipse') return children ? <ellipse {...attributes}>{children}</ellipse> : <ellipse {...attributes} />
+    else if (tag === 'line') return children ? <line {...attributes}>{children}</line> : <line {...attributes} />
+    else if (tag === 'polyline') return children ? <polyline {...attributes}>{children}</polyline> : <polyline {...attributes} />
+    else if (tag === 'polygon') return children ? <polygon {...attributes}>{children}</polygon> : <polygon {...attributes} />
+    else if (tag === 'path') return children ? <path {...attributes}>{children}</path> : <path {...attributes} />
     /* Libe Components tags */
     else if (tag === 'articlemeta') return children ? <ArticleMeta {...attributes}>{children}</ArticleMeta> : <ArticleMeta {...attributes} />
     else if (tag === 'bottomnotes') return children ? <BottomNotes {...attributes}>{children}</BottomNotes> : <BottomNotes {...attributes} />
@@ -223,9 +249,6 @@ function recurseJson2JSX (input) {
     else if (tag === 'sectiontitle') return children ? <SectionTitle {...attributes}>{children}</SectionTitle> : <SectionTitle {...attributes} />
     else if (tag === 'slug') return children ? <Slug {...attributes}>{children}</Slug> : <Slug {...attributes} />
     /* Unrecognized tag */
-    else { console.warn(`Unrecognized tag: ${tag}`); return '' }
+    else { console.warn(`Unrecognized tag: ${tag}`); return '' }
   }
 }
-
-
-
