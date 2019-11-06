@@ -28,12 +28,9 @@ export default class Photo extends Component {
     super()
     this.c = 'lblb-photo'
     this.h2r = new Parser()
-    this.escapeListener = ({ key }) => (key === 'Escape'
-      ? this.setState({ expanded: false })
-      : undefined
-    )
     this.state = { expanded: false }
     this.toggleExpand = this.toggleExpand.bind(this)
+    this.escapeListener = this.escapeListener.bind(this)
     this.allowEscapeLeave = this.allowEscapeLeave.bind(this)
   }
 
@@ -45,7 +42,22 @@ export default class Photo extends Component {
   toggleExpand (e) {
     e.stopPropagation()
     const { props } = this
-    if (props.expandable) this.setState((state) => ({ expanded: !state.expanded }))
+    if (props.expandable) {
+      this.setState(state => ({ expanded: !state.expanded }), () => {
+        this.allowEscapeLeave(this.state.expanded)
+      })
+    }
+  }
+
+  /* * * * * * * * * * * * * * * *
+   *
+   * ESCAPE LISTENER
+   *
+   * * * * * * * * * * * * * * * */
+  escapeListener ({ key }) {
+    return key === 'Escape'
+      ? this.setState({ expanded: false })
+      : undefined
   }
 
   /* * * * * * * * * * * * * * * *
@@ -66,12 +78,8 @@ export default class Photo extends Component {
   render () {
     const { c, h2r, props, state } = this
 
-    /* Toggle 'Esc' key strike watch if expanded */
-    this.allowEscapeLeave(state.expanded)
-
     /* Inner logic */
     const inlineStyle = { zIndex: props.expandable && state.expanded ? props.zIndex : null }
-    const src = state.expanded && props.hdSrc ? props.hdSrc : props.src
 
     /* Assign classes */
     const classes = [c]
@@ -83,40 +91,47 @@ export default class Photo extends Component {
     if (props.huge) classes.push(`${c}_huge`)
 
     /* Display component */
-    return <div className={classes.join(' ')}
-      onClick={state.expanded ? this.toggleExpand : null}
-      style={inlineStyle}>
-      <img className={`${c}__photo`}
-        onClick={this.toggleExpand}
-        alt={props.description}
-        title={props.description}
-        src={src} />
-      <div className={`${c}__info-line`}>
-        <span className={`${c}__description`}>
-          <Annotation
-            small={props.small}
-            big={props.big}
-            huge={props.huge}>
-            {h2r.parse(props.description)}
-          </Annotation>
-        </span>
-        <span className={`${c}__credits`}>
-          <Annotation
-            small={props.small}
-            big={props.big}
-            huge={props.huge}>
-            {h2r.parse(props.credits)}
-          </Annotation>
-        </span>
+    return <div className={classes.join(' ')} style={inlineStyle}>
+      <div className={`${c}__unexpanded-panel`}>
+        <img className={`${c}__photo`} onClick={this.toggleExpand} alt={props.description} title={props.description} src={props.src} loading='lazy' />
+        <div className={`${c}__info-line`}>
+          <span className={`${c}__description`}>
+            <Annotation small={props.small} big={props.big} huge={props.huge}>
+              {h2r.parse(props.description)}
+            </Annotation>
+          </span>
+          <span className={`${c}__credits`}>
+            <Annotation small={props.small} big={props.big} huge={props.huge}>
+              {h2r.parse(props.credits)}
+            </Annotation>
+          </span>
+        </div>
+        <button className={`${c}__expand`}
+          onClick={this.toggleExpand}>
+          <Svg src={`${staticsRootUrl}/assets/expand-arrows-icon_40.svg`} />
+        </button>
       </div>
-      <button className={`${c}__expand`}
-        onClick={this.toggleExpand}>
-        <Svg src={`${staticsRootUrl}/assets/expand-arrows-icon_40.svg`} />
-      </button>
-      <button className={`${c}__collapse`}>
-        <Svg src={`${staticsRootUrl}/assets/tilted-cross-icon_40.svg`} />
-      </button>
-    </div>
+      {state.expanded
+        ? <div className={`${c}__expanded-panel`} ref={n => { this.$expandedPanel = n }} onClick={this.toggleExpand}>
+          <img className={`${c}__photo`} alt={props.description} title={props.description} src={props.hdSrc || props.src} loading='lazy' />
+          <div className={`${c}__info-line`} onClick={e => e.stopPropagation()}>
+            <span className={`${c}__description`}>
+              <Annotation small={props.small} big={props.big} huge={props.huge}>
+                {h2r.parse(props.description)}
+              </Annotation>
+            </span>
+            <span className={`${c}__credits`}>
+              <Annotation small={props.small} big={props.big} huge={props.huge}>
+                {h2r.parse(props.credits)}
+              </Annotation>
+            </span>
+          </div>
+          <button className={`${c}__collapse`}>
+            <Svg src={`${staticsRootUrl}/assets/tilted-cross-icon_40.svg`} />
+          </button>
+        </div>
+        : ''
+      }</div>
   }
 }
 

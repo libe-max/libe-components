@@ -866,7 +866,7 @@ class App extends React.Component {
                 src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 description='Some photo description'
-                credits='<a href="#">https://butdoesitfloat.com/</a>'
+                credits='<a href="https://butdoesitfloat.com" target="_blank">https://butdoesitfloat.com/</a>'
                 expandable />
             </div>
             <div className={`${c}__component-props`}>
@@ -880,7 +880,7 @@ class App extends React.Component {
                 src='https://i.pinimg.com/736x/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 hdSrc='https://i.pinimg.com/originals/e4/3c/bd/e43cbd380acf6d0df01b445c4be5b077.jpg'
                 description='Some photo description'
-                credits='<a href="#">https://butdoesitfloat.com/</a>' />
+                credits='<a href="https://butdoesitfloat.com" target="_blank">https://butdoesitfloat.com/</a>' />
             </div>
             <div className={`${c}__component-props`}>
               src, hdSrc, description, credits, expandable, small, big, huge
