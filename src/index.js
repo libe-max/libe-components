@@ -19,6 +19,7 @@ import SectionTitle from './components/text-levels/SectionTitle'
 import BlockTitle from './components/text-levels/BlockTitle'
 import ParagraphTitle from './components/text-levels/ParagraphTitle'
 import Paragraph from './components/text-levels/Paragraph'
+import Quote from './components/text-levels/Quote'
 import Slug from './components/text-levels/Slug'
 import AnnotationTitle from './components/text-levels/AnnotationTitle'
 import Annotation from './components/text-levels/Annotation'
@@ -301,6 +302,37 @@ class App extends React.Component {
             <div className={`${c}__component-props`}>
               children: inline tags and text<br />
               literary: boolean
+            </div>
+          </div>
+        </div>
+
+        {/* Quote */}
+        <h3 className={`${c}__component-name`}>Quote</h3>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>!literary</div>
+            <div className={`${c}__component`}>
+              <Quote decoration author='Jean-Michel' {...txtLvl}>Praesent ultrices et elit eu pharetra.</Quote>
+            </div>
+            <div className={`${c}__component-props`}>
+              children: inline tags and text<br />
+              literary: boolean
+              author: string
+              sideBar: boolean
+              decoration: boolean
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>literary</div>
+            <div className={`${c}__component`}>
+              <Quote sideBar author='Jean-Michel' {...txtLvl} literary>Praesent ultrices et elit eu pharetra. Aliquam vehicula <a href='#'>maximus mauris vel accumsan</a>. Cras accumsan quam rutrum, commodo nunc quis, laoreet mauris. Nam ipsum ipsum, lobortis et fermentum in, placerat ac ligula. Duis at luctus lorem. Suspendisse a eros neque. Sed maximus leo nec eros finibus faucibus. Vivamus hendrerit aliquet ex eget varius. Donec posuere massa magna, ut lobortis elit viverra quis. Maecenas gravida magna at vestibulum iaculis.</Quote>
+            </div>
+            <div className={`${c}__component-props`}>
+              children: inline tags and text<br />
+              literary: boolean
+              author: string
+              sideBar: boolean
+              decoration: boolean
             </div>
           </div>
         </div>
