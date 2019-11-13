@@ -33,6 +33,7 @@ import Paragraph from '../../text-levels/Paragraph'
 import ParagraphTitle from '../../text-levels/ParagraphTitle'
 import SectionTitle from '../../text-levels/SectionTitle'
 import Slug from '../../text-levels/Slug'
+import Quote from '../../text-levels/Quote'
 
 export default function interpretJSX (input) {
   const inputAsJson = html2json(input)
@@ -245,6 +246,7 @@ function recurseJson2JSX (input) {
     else if (tag === 'overhead') return children ? <Overhead {...attributes}>{children}</Overhead> : <Overhead {...attributes} />
     else if (tag === 'pagetitle') return children ? <PageTitle {...attributes}>{children}</PageTitle> : <PageTitle {...attributes} />
     else if (tag === 'paragraph') return children ? <Paragraph {...attributes}>{children}</Paragraph> : <Paragraph {...attributes} />
+    else if (tag === 'quote') return children ? <Quote {...attributes}>{children}</Quote> : <Quote {...attributes} />
     else if (tag === 'paragraphtitle') return children ? <ParagraphTitle {...attributes}>{children}</ParagraphTitle> : <ParagraphTitle {...attributes} />
     else if (tag === 'sectiontitle') return children ? <SectionTitle {...attributes}>{children}</SectionTitle> : <SectionTitle {...attributes} />
     else if (tag === 'slug') return children ? <Slug {...attributes}>{children}</Slug> : <Slug {...attributes} />
