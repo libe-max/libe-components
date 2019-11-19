@@ -6,6 +6,9 @@ This projects holds reusable UI components for [Libé Labo](https://www.liberati
 
 ~~See a live demo of all the components [here](https://www.liberation.fr/apps/static/demo)~~ (soon).
 
+Home repo: https://github.com/libe-max/libe-components
+NPM: https://www.npmjs.com/package/libe-components
+
 ## Technologies
 
 The project uses [React](https://reactjs.org/). Components are transpiled via `@babel/plugin-transform-react-jsx`.
@@ -31,6 +34,14 @@ The project uses [React](https://reactjs.org/). Components are transpiled via `@
 > cd ../libe-components/ && npm i
 
 # It's all good!
+```
+
+#### Install as a dependency
+
+```bash
+# Go to your project
+> cd /wherever/your/project/is
+> npm i libe-components
 ```
 
 #### Start
@@ -100,12 +111,8 @@ libe-components
 ├── .npmignore
 ├── node_modules/
 ├── public/
-    ├── favicon.ico
-    ├── grid-bg.png
-    ├── image-for-hero-component.png
     ├── index.html
-    ├── style.css
-    ├── manifest.json
+    ├── ...
 ├── lib/
 ├── src/
     ├── index.js
@@ -126,20 +133,9 @@ libe-components
 | `/public/index.html`   | The template page where the demo of all components is displayed |
 | `/public/*`            | Static ressources for the components demo page               |
 | **`/lib/`**            | Build directory. Contains a transpiled version of everything in **`/src/components/`** |
-| **`/src/`**            |                                                              |
-| `/src/index.js`        |                                                              |
-| **`/src/components/`** |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
-|                        |                                                              |
+| **`/src/`**            | Home of the source files                                     |
+| `/src/index.js`        | A page displaying all components in **`/src/components/`**. Not exported in **`/lib/`** |
+| **`/src/components/`** | All the standalone components                                |
 
 
 
