@@ -100,7 +100,7 @@ The project uses [React](https://reactjs.org/). Components are transpiled via `@
 
 ## Use
 
-```react
+```jsx
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Paragraph from 'libe-components/lib/text-levels/Paragraph'
@@ -116,7 +116,6 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
-
 
 ## Contents
 
@@ -137,8 +136,6 @@ libe-components
     ├── components/
 ```
 
-
-
 | Path                   | Purpose                                                      |
 | ---------------------- | ------------------------------------------------------------ |
 | `/package.json`        | The ID card of the project                                   |
@@ -156,10 +153,9 @@ libe-components
 | **`/src/components/`** | All the standalone components                                |
 
 
-
 ## Component file template
 
-```react
+```jsx
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -209,7 +205,6 @@ Example.propTypes = {}
 Example.defaultProps = {}
 
 ```
-
 
 
 ## Auteurs
