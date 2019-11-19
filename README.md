@@ -6,7 +6,7 @@ This projects holds reusable UI components for [Libé Labo](https://www.liberati
 
 ~~See a live demo of all the components [here](https://www.liberation.fr/apps/static/demo)~~ (soon).
 
-Home repo: https://github.com/libe-max/libe-components
+Home repo: https://github.com/libe-max/libe-components<br/>
 NPM: https://www.npmjs.com/package/libe-components
 
 ## Technologies
