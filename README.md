@@ -98,6 +98,24 @@ The project uses [React](https://reactjs.org/). Components are transpiled via `@
 > npm publish
 ```
 
+## Use
+
+```react
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import Paragraph from 'libe-components/lib/text-levels/Paragraph'
+
+function App () {
+  return <div>
+    <Paragraph big>Here is a big paragraph</Paragraph>
+  </div>
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
+```
 
 
 ## Contents
