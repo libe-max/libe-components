@@ -955,7 +955,31 @@ class App extends React.Component {
           <div className={`${c}__comp-slot`}>
             <div className={`${c}__component-variant`}>ratio: default</div>
             <div className={`${c}__component`}>
-              <Video src='https://www.youtube.com/watch?v=dQw4w9WgXcQ' />
+              <Video src='https://www.ina.fr/video/I07250814' />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, ratio
+            </div>
+          </div>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>src: [file]</div>
+            <div className={`${c}__component`}>
+              <Video
+                src='https://www.liberation.fr/apps/2018/06/mcflyetcarlito/static/upload/1.mp4'
+                ratio={4/3} />
+            </div>
+            <div className={`${c}__component-props`}>
+              src, ratio
+            </div>
+          </div>
+        </div>
+        <div className={`${c}__comp-row`}>
+          <div className={`${c}__comp-slot`}>
+            <div className={`${c}__component-variant`}>ratio: 1.78 (16/9)</div>
+            <div className={`${c}__component`}>
+              <Video
+                src='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                ratio={16/9} />
             </div>
             <div className={`${c}__component-props`}>
               src, ratio
@@ -973,6 +997,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+
 
         {/* Raster map */}
         <h3 className={`${c}__component-name`}>RasterMap</h3>

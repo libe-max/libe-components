@@ -10,6 +10,7 @@ import Loader from '../../blocks/Loader'
 import LoadingError from '../../blocks/LoadingError'
 import LogoGlyph from '../../blocks/LogoGlyph'
 import Photo from '../../blocks/Photo'
+import Video from '../../blocks/Video'
 import RasterMap from '../../blocks/RasterMap'
 import ReadAlso from '../../blocks/ReadAlso'
 import ShareArticle from '../../blocks/ShareArticle'
@@ -229,6 +230,7 @@ function recurseJson2JSX (input) {
     else if (tag === 'loadingerror') return children ? <LoadingError {...attributes}>{children}</LoadingError> : <LoadingError {...attributes} />
     else if (tag === 'logoglyph') return children ? <LogoGlyph {...attributes}>{children}</LogoGlyph> : <LogoGlyph {...attributes} />
     else if (tag === 'photo') return children ? <Photo {...attributes}>{children}</Photo> : <Photo {...attributes} />
+    else if (tag === 'libevideo') return children ? <Video {...attributes}>{children}</Video> : <Video {...attributes} />
     else if (tag === 'rastermap') return children ? <RasterMap {...attributes}>{children}</RasterMap> : <RasterMap {...attributes} />
     else if (tag === 'readalso') return children ? <ReadAlso {...attributes}>{children}</ReadAlso> : <ReadAlso {...attributes} />
     else if (tag === 'sharearticle') return children ? <ShareArticle {...attributes}>{children}</ShareArticle> : <ShareArticle {...attributes} />
