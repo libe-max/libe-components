@@ -29,25 +29,25 @@ export default class Video extends Component {
   }
 
   guessOriginAndId (src) {
-    if (src.includes("youtube")) {
+    if (src.includes('youtube')) {
       return {
         origin: 'youtube',
-        id: src.split("&")[0].split("?v=")[1]
+        id: src.split('&')[0].split('?v=')[1]
       }
     }
-    if (src.includes("dailymotion")) {
+    if (src.includes('dailymotion')) {
       return {
         origin: 'dailymotion',
-        id: src.split("&")[0].split("/").pop()
+        id: src.split('&')[0].split('/').pop()
       }
     }
-    if (src.includes("ina.fr/video")) {
+    if (src.includes('ina.fr/video')) {
       return {
-        origin:'ina',
-        id: this.props.src.split("&")[0].split("/").pop()
+        origin: 'ina',
+        id: this.props.src.split('&')[0].split('/').pop()
       }
     }
-    if (src.includes("ina")) {
+    if (src.includes('ina')) {
       return {
         origin: 'ina',
         id: null
@@ -89,20 +89,19 @@ export default class Video extends Component {
     if (unknown) classes.push(`${c}_unknown-origin`)
     else classes.push(`${c}_${origin}`)
 
-  return <div
-    className={classes.join(' ')}
-    style={!unknown && origin !== 'file' ? { paddingTop: `${100 /props.ratio}%` } : {}}>
-        {unknown && <Paragraph>Source inconnue</Paragraph>}
-        {origin === 'file' && <video controls {...props} />}
-        {!unknown && origin !== 'file' && (
-          <iframe
-            title={`${origin}-${id}`}
-            src={this.buildVideoEmbedUrl(origin, id)}
-            scrolling='no'
-            allowFullScreen>
-          </iframe>
-        )}
-        </div>
+    return <div
+      className={classes.join(' ')}
+      style={!unknown && origin !== 'file' ? { paddingTop: `${100 / props.ratio}%` } : {}}>
+      {unknown && <Paragraph>Source inconnue</Paragraph>}
+      {origin === 'file' && <video controls {...props} />}
+      {!unknown && origin !== 'file' && (
+        <iframe
+          title={`${origin}-${id}`}
+          src={this.buildVideoEmbedUrl(origin, id)}
+          scrolling='no'
+          allowFullScreen />
+      )}
+    </div>
   }
 }
 

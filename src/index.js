@@ -966,7 +966,7 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <Video
                 src='https://www.liberation.fr/apps/2018/06/mcflyetcarlito/static/upload/1.mp4'
-                ratio={4/3} />
+                ratio={4 / 3} />
             </div>
             <div className={`${c}__component-props`}>
               src, ratio
@@ -979,7 +979,7 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <Video
                 src='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-                ratio={16/9} />
+                ratio={16 / 9} />
             </div>
             <div className={`${c}__component-props`}>
               src, ratio
@@ -990,14 +990,13 @@ class App extends React.Component {
             <div className={`${c}__component`}>
               <Video
                 src='https://www.dailymotion.com/video/x72vruy'
-                ratio={4/3} />
+                ratio={4 / 3} />
             </div>
             <div className={`${c}__component-props`}>
               src, ratio
             </div>
           </div>
         </div>
-
 
         {/* Raster map */}
         <h3 className={`${c}__component-name`}>RasterMap</h3>
