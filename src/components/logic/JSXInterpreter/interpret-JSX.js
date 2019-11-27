@@ -47,7 +47,7 @@ export default function interpretJSX (input) {
 
 function recurseJson2JSX (input) {
   const { node, tag, text, attr, child } = input
-  if (node === 'text') return h2r.parse(text) || ''
+  if (node === 'text') return h2r.parse(text || '')
   else if (node === 'comment') return ''
   else if (node === 'root') return child ? child.map(kid => recurseJson2JSX(kid)) : []
   else if (node === 'element') {
