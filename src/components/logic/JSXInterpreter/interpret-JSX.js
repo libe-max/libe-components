@@ -1,5 +1,6 @@
 import React from 'react'
 import { html2json } from 'html2json'
+import { Parser } from 'html-to-react'
 
 import ArticleMeta from '../../blocks/ArticleMeta'
 import BottomNotes from '../../blocks/BottomNotes'
@@ -36,6 +37,8 @@ import SectionTitle from '../../text-levels/SectionTitle'
 import Slug from '../../text-levels/Slug'
 import Quote from '../../text-levels/Quote'
 
+const h2r = new Parser()
+
 export default function interpretJSX (input) {
   const inputAsJson = html2json(input)
   const result = recurseJson2JSX(inputAsJson)
@@ -44,7 +47,7 @@ export default function interpretJSX (input) {
 
 function recurseJson2JSX (input) {
   const { node, tag, text, attr, child } = input
-  if (node === 'text') return text || ''
+  if (node === 'text') return h2r.parse(text) || ''
   else if (node === 'comment') return ''
   else if (node === 'root') return child ? child.map(kid => recurseJson2JSX(kid)) : []
   else if (node === 'element') {
